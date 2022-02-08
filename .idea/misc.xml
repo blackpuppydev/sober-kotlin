@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/drawable/selector_button2.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/selector_button3.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/drawable/selector_button4.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/drawable/selector_cage.xml" value="0.32916666666666666" />
         <entry key="app/src/main/res/drawable/selector_gender.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/selector_gender2.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.375" />
@@ -41,6 +42,7 @@
         <entry key="app/src/main/res/layout/activity_profile_select_photo.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_profile_third.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_question.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.2821557971014493" />
         <entry key="app/src/main/res/layout/activity_select_type.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.266304347826087" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.20471014492753623" />
@@ -54,6 +56,8 @@
         <entry key="app/src/main/res/layout/fragment_add_profile3.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_add_profile4.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_have_profile.xml" value="0.26313405797101447" />
+        <entry key="app/src/main/res/layout/fragment_start_audit.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_start_cage.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_start_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/recycle_type.xml" value="0.375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_back.xml" value="0.19583333333333333" />

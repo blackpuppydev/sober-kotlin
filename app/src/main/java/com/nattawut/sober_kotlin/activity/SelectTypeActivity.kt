@@ -51,8 +51,11 @@ class SelectTypeActivity : BaseActivity() {
 
         var adapter = object : TypeTestAdapter(item){
             override fun onSuccess(position: Int) {
-                startActivity(Intent(applicationContext,QuestionActivity::class.java)
-                    .putExtra("header","ชุดคำถามที่ ${position+1}"))
+                startActivity(Intent(applicationContext,QuizActivity::class.java)
+                    .putExtra("type", position.toString()))
+
+//                startActivity(Intent(applicationContext,QuestionActivity::class.java)
+//                    .putExtra("header","ชุดคำถามที่ ${position+1}"))
             }
         }
         recycleType.adapter = adapter

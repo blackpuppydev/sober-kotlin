@@ -11,9 +11,9 @@ object LandingPage {
     const val SL_TYPE = "select_type"
 
     //quiz
-    const val START_QUIZ1 = "start_quiz1"
-    const val START_QUIZ2 = "start_quiz2"
-    const val START_QUIZ3 = "start_quiz3"
+    const val START_CAGE = "0"
+    const val START_AUDIT = "1"
+    const val START_MAST = "2"
 
     //other
     const val HOME = "home"
