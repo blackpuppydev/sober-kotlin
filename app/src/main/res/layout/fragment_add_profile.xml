@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.profile.AddProfileFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/bar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btn_back_fm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_back_circle" />
+
+        <ImageButton
+            android:id="@+id/component_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_component_2" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar1"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="เพศ"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/alert_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/kanitregular"
+                        android:text="*เลือกข้อใดข้อหนึ่ง"
+                        android:textColor="#FF0000"
+                        android:visibility="invisible" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:id="@+id/sl_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_gender">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_male" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/sl_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_gender">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_female" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sl_other_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_gender">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_other_gender" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sl_no_entry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_gender">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_no_entry" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="วัน/เดือน/ปีเกิด"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/alert_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/kanitregular"
+                        android:text="*กรุณาระบุ วัน/เดือน/ปีเกิด ให้ถูกต้อง"
+                        android:textColor="#FF0000"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/getBirthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_text_box"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/showBirthday"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/kanitregular"
+                        android:gravity="center"
+                        android:hint="โปรดระบุ"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:background="@drawable/ic_calendar_foreground"
+                        android:nextFocusLeft="@id/showBirthday" />
+
+
+                </LinearLayout>
+
+
+                <!--    <LinearLayout-->
+                <!--        android:layout_width="match_parent"-->
+                <!--        android:layout_height="wrap_content"-->
+                <!--        android:layout_marginTop="10dp"-->
+                <!--        android:orientation="horizontal">-->
+
+                <!--        <TextView-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitbold"-->
+                <!--            android:textSize="15dp"-->
+                <!--            android:text="สถานะสมรส"/>-->
+
+                <!--        <TextView-->
+                <!--            android:id="@+id/alert_relationship"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_marginLeft="10dp"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:textColor="#FF0000"-->
+                <!--            android:text="*เลือกข้อใดข้อหนึ่ง"/>-->
+
+                <!--    </LinearLayout>-->
+
+
+                <!--    <RadioGroup-->
+                <!--        android:id="@+id/relationship"-->
+                <!--        android:layout_width="match_parent"-->
+                <!--        android:layout_height="wrap_content"-->
+                <!--        android:layout_marginTop="10dp"-->
+                <!--        android:orientation="horizontal">-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/single"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="โสด" />-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/married"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="สมรส"/>-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/broken"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="หย่าร้าง"/>-->
+
+                <!--    </RadioGroup>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="โรคประจำตัว"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <!--        <TextView-->
+                    <!--            android:id="@+id/alert_disease"-->
+                    <!--            android:layout_width="wrap_content"-->
+                    <!--            android:layout_height="wrap_content"-->
+                    <!--            android:layout_marginLeft="10dp"-->
+                    <!--            android:fontFamily="@font/kanitregular"-->
+                    <!--            android:textColor="#FF0000"-->
+                    <!--            android:text="*เลือกข้อใดข้อหนึ่ง"/>-->
+
+
+                </LinearLayout>
+
+
+                <Spinner
+                    android:id="@+id/disease1"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="dis1" />
+
+
+                <Spinner
+                    android:id="@+id/disease2"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="dis2" />
+
+                <Spinner
+                    android:id="@+id/disease3"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="dis3" />
+
+                <Spinner
+                    android:id="@+id/disease4"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="dis4" />
+
+
+                <!--    <RadioGroup-->
+                <!--        android:id="@+id/disease"-->
+                <!--        android:layout_width="match_parent"-->
+                <!--        android:layout_height="wrap_content"-->
+                <!--        android:layout_marginTop="10dp"-->
+                <!--        android:orientation="vertical">-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/noDisease"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="ไม่มี" />-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/heartDisease"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="โรคหัวใจ" />-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/diabetes"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:fontFamily="@font/kanitregular"-->
+                <!--            android:buttonTint="#FFD600"-->
+                <!--            android:text="เบาหวาน"/>-->
+
+
+                <!--            <LinearLayout-->
+                <!--                android:id="@+id/disease2"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:orientation="horizontal">-->
+
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/pressure"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:buttonTint="#FFD600"-->
+                <!--                android:text="ความดัน"/>-->
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/cirrhosis"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:buttonTint="#FFD600"-->
+                <!--                android:text="โรคตับ" />-->
+
+                <!--          </LinearLayout>-->
+
+                <!--        <LinearLayout-->
+                <!--            android:id="@+id/disease3"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:orientation="horizontal">-->
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/lungDisease"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:buttonTint="#FFD600"-->
+                <!--                android:text="โรคปอด"/>-->
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/kidneyDisease"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:buttonTint="#FFD600"-->
+                <!--                android:text="โรคไต"/>-->
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/otherDisease"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:buttonTint="#FFD600"-->
+                <!--                android:text="อื่นๆ"/>-->
+
+                <!--            <EditText-->
+                <!--                android:layout_width="90dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:hint="โปรดระบุ"-->
+                <!--                android:layout_marginLeft="5dp"-->
+                <!--                android:gravity="center"-->
+                <!--                android:fontFamily="@font/kanitregular"-->
+                <!--                android:background="@drawable/edit_text_box"-->
+                <!--                android:textSize="10dp"/>-->
+
+                <!--        </LinearLayout>-->
+
+                <!--    </RadioGroup>-->
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_button2">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/kanitregular"
+            android:text="ต่อไป"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

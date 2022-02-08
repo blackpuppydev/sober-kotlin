@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Sober-kotlin</string>
+    <string name="title_activity_map_location">MapLocationActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="Disease">
+        <item>ไม่มี</item>
+        <item>โรคหัวใจ</item>
+        <item>เบาหวาน</item>
+        <item>ความดัน</item>
+        <item>โรคตับ</item>
+        <item>โรคปอด</item>
+        <item>โรคไต</item>
+        <item>อื่นๆ</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

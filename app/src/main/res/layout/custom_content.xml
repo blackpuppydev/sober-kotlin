@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/text_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/robotobold"
+        android:layout_marginTop="10dp"
+        android:text="ข้อ 1 ไก่กับไข่อะไรเกิดก่อนกัน"/>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textAlignment="center">
+
+        <RadioButton
+            android:id="@+id/radio_choice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotothin"
+            android:text="ไก่"/>
+
+        <RadioButton
+            android:id="@+id/radio_choice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotothin"
+            android:text="ไข่"/>
+
+        <RadioButton
+            android:id="@+id/radio_choice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotothin"
+            android:text="ก็ไม่แน่ใจเหมือนกัน"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="คำตอบของคุณ คือ "/>
+
+    <Button
+        android:id="@+id/btn_nextPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/robotothin"
+        android:text="ต่อไป"
+        android:background="@color/white"
+        />
+
+
+
+</LinearLayout>

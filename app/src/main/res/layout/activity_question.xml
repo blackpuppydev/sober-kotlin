@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activity.QuestionActivity">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Header"
+        android:fontFamily="@font/robotoblackitalic"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+
+    <com.nattawut.sober_kotlin.view.CustomChoiceView
+        android:id="@+id/num1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.nattawut.sober_kotlin.view.CustomChoiceView
+        android:id="@+id/num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.nattawut.sober_kotlin.view.CustomChoiceView
+        android:id="@+id/num3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</LinearLayout>
