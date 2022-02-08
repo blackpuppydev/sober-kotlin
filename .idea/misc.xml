@@ -27,6 +27,8 @@
         <entry key="app/src/main/res/drawable/selector_background_type.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/selector_button.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/selector_button2.xml" value="0.34427083333333336" />
+        <entry key="app/src/main/res/drawable/selector_button3.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/drawable/selector_button4.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/drawable/selector_gender.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/selector_gender2.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.375" />

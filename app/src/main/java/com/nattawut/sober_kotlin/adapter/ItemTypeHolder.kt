@@ -1,5 +1,6 @@
 package com.nattawut.sober_kotlin.adapter
 
+import android.graphics.Color
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -25,6 +26,9 @@ public abstract class ItemTypeHolder(itemView: View) : RecyclerView.ViewHolder(i
         textCount.text = "แบบทดสอบประเภท $type"
         inputCount.text = "จำนวนข้อ $count"
         textDescription.text = "$des"
+
+        if(adapterPosition == 0) btn_go.setBackgroundResource(R.drawable.selector_button4)
+        if(adapterPosition == 1) btn_go.setBackgroundResource(R.drawable.selector_button3)
 
         btn_go.setOnClickListener{
             onClicked(adapterPosition)

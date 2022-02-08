@@ -10,15 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.nattawut.sober_kotlin.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-
-    lateinit var btn_test : RelativeLayout
-    lateinit var btn_data : RelativeLayout
-//    lateinit var btn_profile : ImageButton
-//    lateinit var btn_setting : ImageButton
-
 
     var CAMERA_REQUEST = 1
     var STORAGE_REQUEST = 2
@@ -57,10 +51,6 @@ class MainActivity : AppCompatActivity() {
         var brand:String = Build.BRAND
         Log.d(LOG,"BRAND $brand ${Build.DEVICE} ${Build.MODEL} ${Build.DISPLAY}")
 
-        btn_test = findViewById(R.id.btn_test)
-        btn_data = findViewById(R.id.btn_data)
-//        btn_setting = findViewById(R.id.btn_setting)
-//        btn_profile = findViewById(R.id.btn_profile)
 
 //        btn_profile.setOnClickListener{
 //            startActivity(Intent(applicationContext,ProfileActivity::class.java))
@@ -90,6 +80,10 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
+
+    override fun onBackPressed() {
+
+    }
 
 
 

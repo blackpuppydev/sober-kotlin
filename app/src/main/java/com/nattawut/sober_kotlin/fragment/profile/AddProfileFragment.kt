@@ -15,6 +15,7 @@ import android.widget.TextView
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.activity.ProfileThirdActivity
 import com.nattawut.sober_kotlin.constance.LandingPage
+import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.listener.ProfileEvent
 import java.lang.ClassCastException
 import java.util.*
@@ -38,8 +39,6 @@ class AddProfileFragment : Fragment() {
     private var gender:String? = null
     private var birthDay:String? = null
     lateinit var listener:ProfileEvent
-
-
 
     private lateinit var sl_male:RelativeLayout
     private lateinit var sl_female:RelativeLayout
@@ -111,6 +110,9 @@ class AddProfileFragment : Fragment() {
             when(goToNext){
                 true -> {
                     listener.onSuccess(LandingPage.ADD_PROFILE2)
+                    listener.onResult(gender.toString(),TypeData.GENDER)
+                    listener.onResult(showBirthday.text.toString(),TypeData.BIRTHDAY)
+                    //disease
                 }
                 false -> return@setOnClickListener
             }
