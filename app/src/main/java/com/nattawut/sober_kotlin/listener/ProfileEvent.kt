@@ -5,6 +5,6 @@ import androidx.fragment.app.Fragment
 interface ProfileEvent {
 
     fun onSuccess(page:String)
-    fun onResult(data:String)
+    fun onResult(data:String,type:String)
 
 }

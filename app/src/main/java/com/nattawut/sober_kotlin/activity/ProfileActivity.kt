@@ -75,6 +75,16 @@ class ProfileActivity : BaseActivity() , ProfileEvent{
         openPage(page)
     }
 
-    override fun onResult(data: String) {
+    override fun onResult(data: String, type: String) {
+        //gender
+        //birthday
+        //des1,des2,des3
+        //relationship
+        //address
+        //other
+        //pic bitmap
+
+
+
     }
 }
