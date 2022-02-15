@@ -13,6 +13,12 @@
         <item>โรคไต</item>
         <item>อื่นๆ</item>
     </string-array>
+
+    <string name="male">ชาย</string>
+    <string name="female">หญิง</string>
+    <string name="other_gen">อื่นๆ</string>
+    <string name="no_emp">ไม่ระบุ</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

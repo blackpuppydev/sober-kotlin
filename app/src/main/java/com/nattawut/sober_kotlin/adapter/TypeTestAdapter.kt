@@ -9,7 +9,7 @@ import com.nattawut.sober_kotlin.model.MenuType
 
 public abstract class TypeTestAdapter(var type: ArrayList<MenuType>) : RecyclerView.Adapter<ItemTypeHolder>() { //RecyclerView.ViewHolder
 
-    val TAG = "TypeTestAdapter"
+    private var TAG = "TypeTestAdapter"
 
     public abstract fun onSuccess(position: Int)
 

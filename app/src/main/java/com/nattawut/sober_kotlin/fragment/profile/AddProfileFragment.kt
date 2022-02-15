@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.activity.ProfileThirdActivity
 import com.nattawut.sober_kotlin.constance.LandingPage
@@ -50,6 +47,15 @@ class AddProfileFragment : Fragment() {
     private lateinit var alert_gender:TextView
     private lateinit var btn_confirm:RelativeLayout
     private lateinit var btn_back_fm:ImageButton
+    lateinit var disease1:Spinner
+    lateinit var disease2:Spinner
+    lateinit var disease3:Spinner
+    lateinit var disease4:Spinner
+
+    var dis1 = "ไม่มี"
+    var dis2 = "ไม่มี"
+    var dis3 = "ไม่มี"
+    var dis4 = "ไม่มี"
 
     //values choice
     //Calendar
@@ -93,6 +99,16 @@ class AddProfileFragment : Fragment() {
         alert_birthday = v.findViewById(R.id.alert_birthday)
         btn_confirm = v.findViewById(R.id.btn_confirm)
         btn_back_fm = v.findViewById(R.id.btn_back_fm)
+        disease1 = v.findViewById(R.id.disease1)
+        disease2 = v.findViewById(R.id.disease2)
+        disease3 = v.findViewById(R.id.disease3)
+        disease4 = v.findViewById(R.id.disease4)
+
+        setAdapterDisease(disease1)
+        setAdapterDisease(disease2)
+        setAdapterDisease(disease3)
+        setAdapterDisease(disease4)
+
 
         btn_confirm.setOnClickListener {
 
@@ -104,15 +120,15 @@ class AddProfileFragment : Fragment() {
                 goToNext = true
             }
 
-
-
-
             when(goToNext){
                 true -> {
-                    listener.onSuccess(LandingPage.ADD_PROFILE2)
                     listener.onResult(gender.toString(),TypeData.GENDER)
                     listener.onResult(showBirthday.text.toString(),TypeData.BIRTHDAY)
-                    //disease
+                    listener.onResult(dis1,TypeData.DISEASE1)
+                    listener.onResult(dis2,TypeData.DISEASE2)
+                    listener.onResult(dis3,TypeData.DISEASE3)
+                    listener.onResult(dis4,TypeData.DISEASE4)
+                    listener.onSuccess(LandingPage.ADD_PROFILE2)
                 }
                 false -> return@setOnClickListener
             }
@@ -186,6 +202,35 @@ class AddProfileFragment : Fragment() {
         return v
 
     }
+
+
+
+    private fun setAdapterDisease(disease: Spinner) {
+
+        val diseaseArray = resources.getStringArray(R.array.Disease)
+        val adapter = ArrayAdapter(context!!,
+            android.R.layout.simple_spinner_item, diseaseArray)
+        disease.adapter = adapter
+
+        disease.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val tag = disease.tag
+                when {
+                    tag.equals("dis1") -> dis1 = diseaseArray[position].toString()
+                    tag.equals("dis2") -> dis2 = diseaseArray[position].toString()
+                    tag.equals("dis3") -> dis3 = diseaseArray[position].toString()
+                    tag.equals("dis4") -> dis4 = diseaseArray[position].toString()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // write code to perform some action
+            }
+        }
+    }
+
+
 
     companion object {
         /**

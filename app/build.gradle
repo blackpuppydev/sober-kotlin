@@ -52,4 +52,12 @@ dependencies {
 
 
     implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+
+    // Kotlin
+//    implementation("androidx.sqlite:sqlite-ktx:$sqlite_version")
+
+    //secret data
+    implementation 'com.scottyab:secure-preferences-lib:0.1.7'
+
 }

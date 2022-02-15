@@ -10,12 +10,15 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
+import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
 import com.nattawut.sober_kotlin.listener.ProfileEvent as ProfileEvent
 
 class ProfileActivity : BaseActivity() , ProfileEvent{
 
     var fragment: Fragment? = null
+    var gender = ""
+    var birthday = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +79,17 @@ class ProfileActivity : BaseActivity() , ProfileEvent{
     }
 
     override fun onResult(data: String, type: String) {
+
+        Toast.makeText(this,"$type : $data",Toast.LENGTH_SHORT).show()
+
+        when(type){
+            TypeData.GENDER -> { gender = data }
+            TypeData.BIRTHDAY -> { birthday = data }
+            TypeData.DISEASE1 -> { }
+            TypeData.DISEASE2 -> { }
+            TypeData.DISEASE3 -> { }
+            TypeData.DISEASE4 -> { }
+        }
         //gender
         //birthday
         //des1,des2,des3

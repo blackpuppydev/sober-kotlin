@@ -88,70 +88,132 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-
-                    <RelativeLayout
-                        android:id="@+id/sl_male"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/selector_gender">
+                        android:orientation="vertical">
 
-                        <ImageView
+                        <RelativeLayout
+                            android:id="@+id/sl_male"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_male" />
+                            android:background="@drawable/selector_gender">
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_male" />
 
+                        </RelativeLayout>
 
-                    <RelativeLayout
-                        android:id="@+id/sl_female"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/kanitregular"
+                            android:text="@string/male" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/selector_gender">
+                        android:orientation="vertical">
 
-                        <ImageView
+                        <RelativeLayout
+                            android:id="@+id/sl_female"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_female" />
+                            android:background="@drawable/selector_gender">
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_female" />
 
-                    <RelativeLayout
-                        android:id="@+id/sl_other_gender"
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/kanitregular"
+                            android:text="@string/female" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/selector_gender">
+                        android:orientation="vertical">
 
-                        <ImageView
+                        <RelativeLayout
+                            android:id="@+id/sl_other_gender"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_other_gender" />
+                            android:background="@drawable/selector_gender">
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_other_gender" />
 
-                    <RelativeLayout
-                        android:id="@+id/sl_no_entry"
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/kanitregular"
+                            android:text="@string/other_gen" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/selector_gender">
+                        android:orientation="vertical">
 
-                        <ImageView
+                        <RelativeLayout
+                            android:id="@+id/sl_no_entry"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_no_entry" />
+                            android:background="@drawable/selector_gender">
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_no_entry" />
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/kanitregular"
+                            android:text="@string/no_emp" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -306,6 +368,7 @@
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitlight"
                     android:tag="dis1" />
 
 
@@ -314,6 +377,7 @@
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitlight"
                     android:tag="dis2" />
 
                 <Spinner
@@ -321,6 +385,7 @@
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitlight"
                     android:tag="dis3" />
 
                 <Spinner
@@ -328,6 +393,7 @@
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitlight"
                     android:tag="dis4" />
 
 
