@@ -1,10 +1,7 @@
 package com.nattawut.sober_kotlin.activity
 
-import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
@@ -12,9 +9,9 @@ import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
-import com.nattawut.sober_kotlin.listener.ProfileEvent as ProfileEvent
+import com.nattawut.sober_kotlin.listener.FragmentEvent
 
-class ProfileActivity : BaseActivity() , ProfileEvent{
+class ProfileActivity : BaseActivity() , FragmentEvent {
 
     var fragment: Fragment? = null
     var gender = ""

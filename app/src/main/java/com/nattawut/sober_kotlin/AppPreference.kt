@@ -11,6 +11,7 @@ class AppPreference {
     private var USERNAME = "USERNAME"
     private var APPNAME = "APP"
     private var PASSWORD = "PASSWORD"
+    private var LANGUAGE = "LANGUAGE"
 
 
     companion object{
@@ -41,6 +42,14 @@ class AppPreference {
 
     fun getPassword(): String? {
         return sharedPreference.getString(PASSWORD, "")
+    }
+
+    fun setLanguage(language:String){
+        sharedPreference.edit().putString(LANGUAGE,language).apply()
+    }
+
+    fun getLanguage():String?{
+        return sharedPreference.getString(LANGUAGE,"")
     }
 
 

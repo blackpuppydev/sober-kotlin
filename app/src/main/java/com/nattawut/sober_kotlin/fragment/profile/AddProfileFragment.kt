@@ -2,7 +2,6 @@ package com.nattawut.sober_kotlin.fragment.profile
 
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,10 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.nattawut.sober_kotlin.R
-import com.nattawut.sober_kotlin.activity.ProfileThirdActivity
 import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
-import com.nattawut.sober_kotlin.listener.ProfileEvent
+import com.nattawut.sober_kotlin.listener.FragmentEvent
 import java.lang.ClassCastException
 import java.util.*
 
@@ -35,7 +33,7 @@ class AddProfileFragment : Fragment() {
 
     private var gender:String? = null
     private var birthDay:String? = null
-    lateinit var listener:ProfileEvent
+    lateinit var listener:FragmentEvent
 
     private lateinit var sl_male:RelativeLayout
     private lateinit var sl_female:RelativeLayout
@@ -77,7 +75,7 @@ class AddProfileFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try{
-            listener = context as ProfileEvent
+            listener = context as FragmentEvent
         }catch (e:ClassCastException){}
     }
 
@@ -192,9 +190,6 @@ class AddProfileFragment : Fragment() {
 
             datePicker.show()
         }
-
-
-
 
 
 

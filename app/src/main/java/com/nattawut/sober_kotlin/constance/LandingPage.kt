@@ -2,12 +2,17 @@ package com.nattawut.sober_kotlin.constance
 
 object LandingPage {
 
+    //register
+    const val REGISTER1 = "register1"
+    const val REGISTER2 = "register2"
+
     //profile
     const val ADD_PROFILE = "add_profile"
     const val ADD_PROFILE2 = "add_profile2"
     const val ADD_PROFILE3 = "add_profile3"
     const val ADD_PROFILE4 = "add_profile4"
     const val HAVE_PROFILE = "have_profile"
+
     const val SL_TYPE = "select_type"
 
     //quiz
@@ -18,5 +23,6 @@ object LandingPage {
     //other
     const val HOME = "home"
     const val BACK = "back"
+    const val LOGIN = "login"
 
 }

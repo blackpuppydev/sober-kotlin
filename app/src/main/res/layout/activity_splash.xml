@@ -8,12 +8,29 @@
     android:background="@color/primary_color"
     tools:context=".activity.SplashActivity">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="50dp"
-        android:background="@drawable/bg_logo" />
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@drawable/logo_drunk" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_logo" />
+
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>

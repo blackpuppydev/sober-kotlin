@@ -13,4 +13,12 @@ object TypeData {
     const val MORE_DETAIL = "more_detail"
     const val PIC = "pic"
 
+    const val USERNAME = "username"
+    const val MAIL = "mail"
+    const val PASSWORD = "password"
+    const val FIRSTNAME = "fname"
+    const val LASTNAME = "lname"
+    const val COMPANY = "company"
+    const val VACATION = "vacation"
+
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sober-kotlin</string>
+    <string name="app_name">Drunk sort</string>
     <string name="title_activity_map_location">MapLocationActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
 
@@ -18,6 +18,45 @@
     <string name="female">หญิง</string>
     <string name="other_gen">อื่นๆ</string>
     <string name="no_emp">ไม่ระบุ</string>
+    <string name="login">เข้าสู่ระบบ</string>
+    <string name="logout">ออกจากระบบ</string>
+    <string name="next">ต่อไป</string>
+    <string name="welcome">ยินดีต้อนรับ</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="new_acc">สร้างบัญชีใหม่</string>
+    <string name="forgot"><u>ลืมรหัสผ่าน</u></string>
+
+    <string name="title_main">ตรวจเช็คและเก็บข้อมูลการติดสุรา</string>
+    <string name="title_test">การทดสอบ</string>
+    <string name="title_data">คลังข้อมูล</string>
+    <string name="manage_team">จัดการทีม</string>
+    <string name="name">ชื่อผู้รับการทดสอบ</string>
+    <string name="username_email">ชื่อผู้ใช้/อีเมล</string>
+    <string name="password">รหัสผ่าน</string>
+    <string name="old_pass">รหัสผ่านเก่า</string>
+    <string name="new_pass">รหัสผ่านใหม่</string>
+    <string name="con_password">ยืนยันรหัสผ่าน</string>
+    <string name="org_com">องค์กร/บริษัท</string>
+    <string name="occa_pos">อาชีพ/ตำแหน่ง</string>
+    <string name="change_pass">เปลี่ยนรหัสผ่าน</string>
+    <string name="setting">ตั้งค่า</string>
+    <string name="edit_per">แก้ไขข้อมูลส่วนตัว</string>
+    <string name="edit">แก้ไข</string>
+    <string name="gender">เพศ</string>
+    <string name="dob">วัน/เดือน/ปีเกิด</string>
+    <string name="blood">กรุ๊ปเลือด</string>
+    <string name="address">ที่อยู่</string>
+    <string name="edu_level">ระดับการศึกษา</string>
+
+
+    <string name="status">สถานะสมรส</string>
+    <string name="single">โสด</string>
+    <string name="married">สมรส</string>
+    <string name="separated">หย่าร้าง</string>
+
+
+    <string name="nation">สัญชาติ</string>
+    <string name="thai">ไทย</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

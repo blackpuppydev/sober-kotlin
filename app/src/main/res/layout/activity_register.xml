@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/fragment_register"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegisterActivity">
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="ชื่อผู้ใช้"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_username"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกชื่อผู้ใช้"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="อีเมล"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_email"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกอีเมล"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="รหัสผ่าน"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_password"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกรหัสผ่าน"-->
+<!--            android:password="true"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="ยืนยันรหัสผ่าน"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_conpass"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณายืนยันรหัสผ่าน"-->
+<!--            android:password="true"-->
+<!--            android:textSize="12dp" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="ชื่อ"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_name"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกชื่อ"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="นามสกุล"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_lname"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกนามสกุล"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="ตำแหน่ง"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_pos"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกตำแหน่ง"-->
+<!--            android:textSize="12dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:text="บริษัท"-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/add_com"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:fontFamily="@font/kanitlight"-->
+<!--            android:hint="กรุณากรอกบริษัท"-->
+<!--            android:textSize="12dp" />-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/btn_confirm"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="30dp"-->
+<!--            android:background="@drawable/selector_button2">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:fontFamily="@font/kanitregular"-->
+<!--                android:text="@string/confirm"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="18dp" />-->
+
+<!--        </RelativeLayout>-->
+
+
+<!--    </LinearLayout>-->
+
+</RelativeLayout>

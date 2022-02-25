@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
-import com.nattawut.sober_kotlin.listener.ProfileEvent
+import com.nattawut.sober_kotlin.listener.FragmentEvent
 import java.lang.ClassCastException
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,12 +26,12 @@ class AddProfileFragment2 : Fragment() {
 
     lateinit var alert_relationship: TextView
     private lateinit var btn_back_fm:ImageButton
-    lateinit var listener: ProfileEvent
+    lateinit var listener: FragmentEvent
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
-            listener = context as ProfileEvent
+            listener = context as FragmentEvent
         }catch (e:ClassCastException){}
     }
 

@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Drunk sort</string>
+    <string name="title_activity_map_location">MapLocationActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="Disease">
+        <item>None</item>
+        <item>Cardiovascular Diseases</item>
+        <item>Diabetes</item>
+        <item>Hypertension</item>
+        <item>Cirrhosis</item>
+        <item>Pneumonia</item>
+        <item>Kidney Diseases</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other_gen">Others</string>
+    <string name="no_emp">Unidentified</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="next">Next</string>
+    <string name="welcome">Welcome</string>
+    <string name="confirm">Confirm</string>
+    <string name="new_acc">Create new account</string>
+    <string name="forgot"><u>Forget password</u></string>
+
+    <string name="title_main">Checking data alcoholism</string>
+    <string name="title_test">Test</string>
+    <string name="title_data">Storage</string>
+    <string name="manage_team">Manage team</string>
+    <string name="name">Name</string>
+    <string name="username_email">Username/E-mail</string>
+    <string name="password">Password</string>
+    <string name="old_pass">Old password</string>
+    <string name="new_pass">New password</string>
+    <string name="con_password">Confirm password</string>
+    <string name="org_com">Organization/Company</string>
+    <string name="occa_pos">Occupation/Position</string>
+    <string name="change_pass">Change password</string>
+    <string name="setting">Setting</string>
+    <string name="edit_per">Edit personal information</string>
+    <string name="edit">Edit</string>
+    <string name="gender">Gender</string>
+    <string name="dob">Date of birth</string>
+    <string name="blood">Blood type</string>
+    <string name="address">Address</string>
+
+
+    <string name="edu_level">Education level</string>
+
+
+    <string name="status">Status</string>
+    <string name="single">Single</string>
+    <string name="married">Married</string>
+    <string name="separated">Separated</string>
+
+
+    <string name="nation">Nationality</string>
+    <string name="thai">Thai</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

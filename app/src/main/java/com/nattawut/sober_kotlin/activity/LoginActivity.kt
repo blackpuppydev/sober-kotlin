@@ -1,9 +1,13 @@
 package com.nattawut.sober_kotlin.activity
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.view.View
 import android.widget.Toast
 import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
@@ -14,13 +18,14 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     var dbManager: DBManager? = null
+    var hidePass : Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.hide()
         setContentView(R.layout.activity_login)
 
         dbManager = DBManager(this)
-//        dbManager!!.createTableAdmin()
 
         AppPreference.getInstance().setSharedPreference(applicationContext)
 
@@ -34,22 +39,44 @@ class LoginActivity : AppCompatActivity() {
         btn_confirm.setOnClickListener {
 
             //check database
+            if (dbManager!!.getAdmin(username.text.toString(),password.text.toString())){
+                AppPreference.getInstance().setUsername(username.text.toString())
+                AppPreference.getInstance().setPassword(password.text.toString())
+                startActivity(Intent(applicationContext,MainActivity::class.java))
+            }else{
+                alert.visibility = View.VISIBLE
+            }
+        }
 
-            AppPreference.getInstance().setUsername(username.text.toString())
-            AppPreference.getInstance().setPassword(password.text.toString())
+        btn_register.setOnClickListener {
+            startActivity(Intent(applicationContext,RegisterActivity::class.java))
+        }
 
-            dbManager?.insertAdmin(Admin("Nattawut","Chitsaard",username.text.toString(),password.text.toString(),"master","master"))
-            dbManager?.insertAdmin(Admin("Nawin","Wongwiwat","nawin.w","123","hr","com1"))
+        btn_forgot.setOnClickListener {
+            Toast.makeText(this,"forgot password",Toast.LENGTH_SHORT).show()
+        }
 
-
-            dbManager?.getAdmin()
-
-
-
-//
-//            Toast.makeText(this,"${AppPreference.getInstance().getUsername()} : ${AppPreference.getInstance().getPassword()}",Toast.LENGTH_SHORT).show()
-
+        btn_hide.setOnClickListener {
+            if(hidePass){
+                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                hidePass = false
+                btn_hide.setBackgroundResource(R.drawable.eye_close)
+            } else{
+                password.transformationMethod = PasswordTransformationMethod.getInstance()
+                hidePass = true
+                btn_hide.setBackgroundResource(R.drawable.eye_open)
+            }
         }
 
     }
+
+
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
+
+
+
+
 }

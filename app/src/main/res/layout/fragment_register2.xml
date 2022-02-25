@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_regis"
+    tools:context=".fragment.register.RegisterFragment2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/kanitregular"
+                android:text="ชื่อจริง"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+            <EditText
+                android:id="@+id/getName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/kanitregular"
+                android:hint="ชื่อจริง"
+                android:padding="10dp"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/kanitregular"
+                android:text="นามสกุล"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+            <EditText
+                android:id="@+id/getLname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/kanitregular"
+                android:hint="นามสกุล"
+                android:padding="10dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/kanitregular"
+                android:text="องค์กร/บริษัท"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/getCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/kanitregular"
+                android:hint="ระบุบริษัท/องค์กรของท่าน"
+                android:padding="10dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/kanitregular"
+                android:text="อาชีพ/ตำแหน่ง"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/getVacation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/kanitregular"
+                android:hint="ระบุอาชีพ/ตำแหน่งของท่าน"
+                android:padding="10dp"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/selector_button">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/kanitregular"
+                android:text="@string/new_acc"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
