@@ -14,6 +14,18 @@
         <item>อื่นๆ</item>
     </string-array>
 
+    <string-array name="menu">
+        <item>เปลี่ยนรหัสผ่าน</item>
+        <item>ตั้งค่า</item>
+        <item>ออกจากระบบ</item>
+    </string-array>
+
+    <array name="icons_menu">
+        <item>@drawable/ic_save</item>
+        <item>@drawable/ic_save</item>
+        <item>@drawable/ic_save</item>
+    </array>
+
     <string name="male">ชาย</string>
     <string name="female">หญิง</string>
     <string name="other_gen">อื่นๆ</string>
@@ -29,6 +41,7 @@
     <string name="title_main">ตรวจเช็คและเก็บข้อมูลการติดสุรา</string>
     <string name="title_test">การทดสอบ</string>
     <string name="title_data">คลังข้อมูล</string>
+    <string name="title_team">จัดการทีม</string>
     <string name="manage_team">จัดการทีม</string>
     <string name="name">ชื่อผู้รับการทดสอบ</string>
     <string name="username_email">ชื่อผู้ใช้/อีเมล</string>

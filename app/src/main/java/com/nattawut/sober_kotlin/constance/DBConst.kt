@@ -21,6 +21,7 @@ object DBConst {
     const val ADMIN_PASSWORD = "admin_password"
     const val ADMIN_POS = "admin_pos"
     const val ADMIN_COM = "admin_com"
+    const val ADMIN_PIC = "admin_pic"
 
     const val SCORE_MODE = "score_mode"
 

@@ -14,6 +14,18 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="menu">
+        <item>Change password</item>
+        <item>Setting</item>
+        <item>Logout</item>
+    </string-array>
+
+    <array name="icons_menu">
+        <item>@drawable/ic_save</item>
+        <item>@drawable/ic_save</item>
+        <item>@drawable/ic_save</item>
+    </array>
+
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other_gen">Others</string>
@@ -29,6 +41,7 @@
     <string name="title_main">Checking data alcoholism</string>
     <string name="title_test">Test</string>
     <string name="title_data">Storage</string>
+    <string name="title_team">Manage</string>
     <string name="manage_team">Manage team</string>
     <string name="name">Name</string>
     <string name="username_email">Username/E-mail</string>

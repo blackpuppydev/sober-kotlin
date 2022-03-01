@@ -13,6 +13,8 @@ class AppPreference {
     private var PASSWORD = "PASSWORD"
     private var LANGUAGE = "LANGUAGE"
 
+    private var MASTER = "master"
+
 
     companion object{
 
@@ -52,6 +54,13 @@ class AppPreference {
         return sharedPreference.getString(LANGUAGE,"")
     }
 
+    fun setMaster(status:Boolean){
+        sharedPreference.edit().putBoolean(MASTER,status).apply()
+    }
+
+    fun getMaster(): Boolean {
+        return sharedPreference.getBoolean(MASTER,false)
+    }
 
 
 }

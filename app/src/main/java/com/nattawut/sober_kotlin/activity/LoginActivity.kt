@@ -1,24 +1,24 @@
 package com.nattawut.sober_kotlin.activity
 
 import android.content.Intent
-import android.database.Cursor
-import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
 import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
-import com.nattawut.sober_kotlin.manager.Admin
 import com.nattawut.sober_kotlin.manager.DBManager
+import com.nattawut.sober_kotlin.view.dialog.LoadingDialog
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
     var dbManager: DBManager? = null
     var hidePass : Boolean = true
+    var loadingDialog:LoadingDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         dbManager = DBManager(this)
+        loadingDialog = LoadingDialog(this)
 
         AppPreference.getInstance().setSharedPreference(applicationContext)
 
@@ -39,13 +40,25 @@ class LoginActivity : AppCompatActivity() {
         btn_confirm.setOnClickListener {
 
             //check database
-            if (dbManager!!.getAdmin(username.text.toString(),password.text.toString())){
+            if (dbManager!!.checkAdmin(username.text.toString(),password.text.toString())){
                 AppPreference.getInstance().setUsername(username.text.toString())
                 AppPreference.getInstance().setPassword(password.text.toString())
-                startActivity(Intent(applicationContext,MainActivity::class.java))
+
+                loadingDialog?.showDialog("Please wait")
+
+                val timer = object: CountDownTimer(2000, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {}
+
+                    override fun onFinish() {
+                       loadingDialog?.hideDialog()
+                       startActivity(Intent(applicationContext,MainActivity::class.java))
+                    }
+                }
+                timer.start()
             }else{
                 alert.visibility = View.VISIBLE
             }
+
         }
 
         btn_register.setOnClickListener {

@@ -1,11 +1,11 @@
 package com.nattawut.sober_kotlin.activity
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
@@ -14,6 +14,13 @@ import com.nattawut.sober_kotlin.fragment.register.RegisterFragment2
 import com.nattawut.sober_kotlin.listener.FragmentEvent
 import com.nattawut.sober_kotlin.manager.Admin
 import com.nattawut.sober_kotlin.manager.DBManager
+import android.graphics.drawable.BitmapDrawable
+
+
+import android.graphics.drawable.Drawable
+import android.graphics.BitmapFactory
+import com.nattawut.sober_kotlin.R
+
 
 class RegisterActivity : AppCompatActivity() , FragmentEvent{
 
@@ -35,21 +42,6 @@ class RegisterActivity : AppCompatActivity() , FragmentEvent{
 
         initView()
 
-
-//        btn_confirm.setOnClickListener {
-//
-//            dbManager!!.insertAdmin(Admin(add_name.text.toString(),
-//                                        add_lname.text.toString(),
-//                                        add_email.text.toString(),
-//                                        add_username.text.toString(),
-//                                        add_password.text.toString(),
-//                                        add_pos.text.toString(),add_com.text.toString()))
-//
-//            startActivity(Intent(applicationContext,MainActivity::class.java))
-//
-//        }
-
-
     }
 
 
@@ -69,7 +61,18 @@ class RegisterActivity : AppCompatActivity() , FragmentEvent{
             LandingPage.REGISTER2 -> { fragment = RegisterFragment2() }
             LandingPage.LOGIN -> {
 
-                dbManager?.insertAdmin(Admin(firstName,lastName,mail,username,password,vacation,company))
+                val pic:Bitmap = BitmapFactory.decodeResource(resources, R.drawable.user)
+
+                dbManager?.insertAdmin(Admin(
+                    firstName,
+                    lastName,
+                    mail,
+                    username,
+                    password,
+                    vacation,
+                    company,
+                    pic
+                ))
 
                 finish()
                 val intent = Intent(this, LoginActivity::class.java)

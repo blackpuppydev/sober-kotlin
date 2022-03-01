@@ -42,7 +42,7 @@
         <entry key="app/src/main/res/layout/activity_have_profile.xml" value="0.2563405797101449" />
         <entry key="app/src/main/res/layout/activity_location_setting.xml" value="0.3161231884057971" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_map_location.xml" value="0.3161231884057971" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_profile_second.xml" value="0.335" />
@@ -70,7 +70,12 @@
         <entry key="app/src/main/res/layout/fragment_start_cage.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_start_mast.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_start_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/load_dialod.xml" value="0.3609375" />
+        <entry key="app/src/main/res/layout/load_dialog.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.3609375" />
         <entry key="app/src/main/res/layout/recycle_type.xml" value="0.375" />
+        <entry key="app/src/main/res/menu-v26/nav_menu.xml" value="0.3609375" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_back.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_back_round.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_home.xml" value="0.19583333333333333" />
@@ -78,6 +83,8 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_home2_round.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_home_round.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_black.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_profile.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_profile_round.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_start.xml" value="0.34427083333333336" />
       </map>
     </option>
