@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kanitregular"
-                android:text="ชื่อผู้ใช้"
+                android:text="@string/username"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -43,7 +43,7 @@
                 android:layout_marginBottom="13dp"
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitregular"
-                android:hint="ชื่อผู้ใช้"
+                android:hint="@string/username"
                 android:padding="10dp"
                 android:textSize="15dp" />
 
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kanitregular"
-                android:text="อีเมล"
+                android:text="@string/email"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kanitregular"
-                android:text="รหัสผ่าน"
+                android:text="@string/password"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kanitregular"
-                android:text="ยืนยันรหัสผ่าน"
+                android:text="@string/con_password"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/kanitregular"
-                android:text="ถัดไป"
+                android:text="@string/next"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 

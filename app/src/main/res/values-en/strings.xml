@@ -59,9 +59,13 @@
     <string name="dob">Date of birth</string>
     <string name="blood">Blood type</string>
     <string name="address">Address</string>
-
-
     <string name="edu_level">Education level</string>
+    <string name="user_mail">Username/Email</string>
+    <string name="username">Username</string>
+    <string name="email">E-mail</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="edit_pro">Edit profile</string>
 
 
     <string name="status">Status</string>

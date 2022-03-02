@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kanitregular"
-                android:text="ชื่อจริง"
+                android:text="@string/firstname"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -42,7 +42,7 @@
                 android:layout_marginBottom="13dp"
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitregular"
-                android:hint="ชื่อจริง"
+                android:hint="@string/firstname"
                 android:padding="10dp"
                 android:textSize="15dp" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kanitregular"
-                android:text="นามสกุล"
+                android:text="@string/lastname"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -65,7 +65,7 @@
                 android:layout_marginBottom="13dp"
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitregular"
-                android:hint="นามสกุล"
+                android:hint="@string/lastname"
                 android:padding="10dp"
                 android:textSize="15dp" />
 
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kanitregular"
-                android:text="องค์กร/บริษัท"
+                android:text="@string/org_com"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -87,7 +87,7 @@
                 android:layout_marginBottom="13dp"
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitregular"
-                android:hint="ระบุบริษัท/องค์กรของท่าน"
+                android:hint="@string/org_com"
                 android:padding="10dp"
                 android:textSize="15dp" />
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kanitregular"
-                android:text="อาชีพ/ตำแหน่ง"
+                android:text="@string/occa_pos"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -109,7 +109,7 @@
                 android:layout_marginBottom="13dp"
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitregular"
-                android:hint="ระบุอาชีพ/ตำแหน่งของท่าน"
+                android:hint="@string/occa_pos"
                 android:padding="10dp"
                 android:textSize="15dp" />
 

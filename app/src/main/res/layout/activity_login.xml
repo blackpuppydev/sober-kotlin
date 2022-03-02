@@ -39,7 +39,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:fontFamily="@font/kanitregular"
-            android:text="ชื่อผู้ใช้/อีเมล"
+            android:text="@string/user_mail"
             android:textSize="17dp" />
 
 
@@ -53,7 +53,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/edit_text_box"
             android:fontFamily="@font/kanitregular"
-            android:hint="ชื่อผู้ใช้ หรือ อีเมล"
+            android:hint="@string/user_mail"
             android:padding="10dp"
             android:textSize="15dp" />
 
@@ -63,7 +63,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:fontFamily="@font/kanitlight"
-            android:text="รหัสผ่าน"
+            android:text="@string/password"
             android:textSize="17dp" />
 
         <RelativeLayout
