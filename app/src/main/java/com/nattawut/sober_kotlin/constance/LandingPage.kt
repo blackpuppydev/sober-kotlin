@@ -15,6 +15,10 @@ object LandingPage {
 
     const val SL_TYPE = "select_type"
 
+    //edit profile
+    const val EDIT_PROFILE1 = "edit_profile1"
+    const val EDIT_PROFILE2 = "edit_profile2"
+
     //quiz
     const val START_CAGE = "0"
     const val START_AUDIT = "1"

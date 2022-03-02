@@ -127,12 +127,19 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
         val getAdmin = this.writableDatabase
 
-        if(type == TypeData.FIRSTNAME){
-            queryText = "select $ADMIN_NAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
-        }else if(type == TypeData.LASTNAME){
-            queryText = "select $ADMIN_LNAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
-        }else if(type == TypeData.COMPANY){
-            queryText = "select $ADMIN_POS from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+        when (type) {
+            TypeData.FIRSTNAME -> {
+                queryText = "select $ADMIN_NAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
+            TypeData.LASTNAME -> {
+                queryText = "select $ADMIN_LNAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
+            TypeData.COMPANY -> {
+                queryText = "select $ADMIN_COM from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
+            TypeData.VACATION -> {
+                queryText = "select $ADMIN_POS from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
         }
 
         val resultAdmin = getAdmin?.rawQuery(queryText, null)

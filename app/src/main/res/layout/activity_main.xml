@@ -154,6 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:orientation="vertical">
 
 
@@ -201,13 +202,26 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:padding="20dp">
 
 
                     <TextView
+                        android:id="@+id/company"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="hello" />
+                        android:fontFamily="@font/kanitlight"
+                        android:text="company"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="position"
+                        android:textColor="@color/black" />
 
 
                 </RelativeLayout>

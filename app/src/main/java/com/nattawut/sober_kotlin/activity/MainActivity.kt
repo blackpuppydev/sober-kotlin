@@ -85,8 +85,10 @@ class MainActivity : AppCompatActivity() {
             nav_menu.startAnimation(animate)
         }
 
-
-
+        btn_edit.setOnClickListener {
+            startActivity(Intent(this,EditProfileActivity::class.java))
+        }
+        
 
         btn_test.setOnClickListener{
             startActivity(Intent(this,ProfileActivity::class.java))
@@ -151,12 +153,14 @@ class MainActivity : AppCompatActivity() {
                     )
                 }"
 
+        company.text = "${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.COMPANY)}"
+        position.text = "${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.VACATION)}"
+
+
+        //show manage team
         if(AppPreference.getInstance().getUsername().toString() == "master"){
             btn_team.visibility = View.VISIBLE
         }
-
-
-
 
         nav_menu.setNavigationItemSelectedListener {
             when (it.itemId) {
