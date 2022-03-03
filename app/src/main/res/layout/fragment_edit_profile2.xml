@@ -5,10 +5,245 @@
     android:layout_height="match_parent"
     tools:context=".fragment.edit.EditProfileFragment2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="10dp"
+        tools:ignore="UselessParent">
+
+
+        <RelativeLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_back" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/kanitregular"
+                android:text="@string/edit_per"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/btn_confirm"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/selector_button"
+                android:backgroundTint="#FFEF98"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kanitregular"
+                    android:gravity="center"
+                    android:text="@string/confirm"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bar"
+            android:layout_marginTop="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:id="@+id/pic"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/get_pic" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/username"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/username"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/firstname"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+
+                <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/firstname"
+                    android:padding="10dp"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/lastname"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+
+                <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/lastname"
+                    android:padding="10dp"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/email"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+
+                <EditText
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/email"
+                    android:padding="10dp"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/title_com"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/org_com"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/org_com"
+                    android:padding="10dp"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/title_pos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitregular"
+                    android:text="@string/occa_pos"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/edit_text_box"
+                    android:fontFamily="@font/kanitregular"
+                    android:hint="@string/occa_pos"
+                    android:padding="10dp"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
 
 </FrameLayout>

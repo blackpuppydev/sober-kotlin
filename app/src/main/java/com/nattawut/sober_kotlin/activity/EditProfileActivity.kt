@@ -11,6 +11,7 @@ import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.edit.EditProfileFragment1
 import com.nattawut.sober_kotlin.fragment.edit.EditProfileFragment2
+import com.nattawut.sober_kotlin.fragment.edit.PasswordFragment
 import com.nattawut.sober_kotlin.fragment.register.RegisterFragment1
 import com.nattawut.sober_kotlin.fragment.register.RegisterFragment2
 import com.nattawut.sober_kotlin.listener.FragmentEvent
@@ -26,6 +27,7 @@ class EditProfileActivity : AppCompatActivity(), FragmentEvent {
     private var lastName = ""
     private var company = ""
     private var vacation = ""
+    private var change_pass = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar!!.hide()
@@ -34,14 +36,24 @@ class EditProfileActivity : AppCompatActivity(), FragmentEvent {
 
         dbManager = DBManager(this)
 
+        change_pass = intent.getBooleanExtra("password",false)
+
         initView()
 
 
     }
 
     private fun initView(){
-        val fragment1 = EditProfileFragment1()
-        supportFragmentManager.beginTransaction().add(R.id.fragment_edit,fragment1).commit()
+
+        if (change_pass){
+            val fragment1 = PasswordFragment()
+            supportFragmentManager.beginTransaction().add(R.id.fragment_edit,fragment1).commit()
+        }else{
+            val fragment1 = EditProfileFragment1()
+            supportFragmentManager.beginTransaction().add(R.id.fragment_edit,fragment1).commit()
+        }
+
+
     }
 
 

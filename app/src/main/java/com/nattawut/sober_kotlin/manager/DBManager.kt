@@ -26,6 +26,7 @@ import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_ADMIN
 import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_EMP
 import java.io.ByteArrayOutputStream
 import android.graphics.BitmapFactory
+import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.TypeData
 
@@ -140,6 +141,12 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
             TypeData.VACATION -> {
                 queryText = "select $ADMIN_POS from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
             }
+            TypeData.USERNAME -> {
+                queryText = "select $ADMIN_USERNAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
+            TypeData.MAIL -> {
+                queryText = "select $ADMIN_MAIL from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
         }
 
         val resultAdmin = getAdmin?.rawQuery(queryText, null)
@@ -152,14 +159,37 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
         return result
     }
 
-    fun updateAdmin(type:String,values:String){
-        var dbUpdate:SQLiteDatabase = this.writableDatabase
+//    fun updateAdmin(type:String,values:String){
+//        var dbUpdate:SQLiteDatabase = this.writableDatabase
+//
+//    }
+
+    fun updateProfileAdmin(username: String,
+                           firstname:String,
+                           lastname:String,
+                           mail:String,
+                           company:String,
+                           position:String,pic:Bitmap,currentUsername:String){
+
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        pic.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream)
+
+        val imgInByte = byteArrayOutputStream.toByteArray()
+
+        val dbUpdate:SQLiteDatabase = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(ADMIN_NAME,firstname)
+        cv.put(ADMIN_LNAME,lastname)
+        cv.put(ADMIN_MAIL,mail)
+        cv.put(ADMIN_USERNAME,username)
+        cv.put(ADMIN_PASSWORD,AppPreference.getInstance().getPassword().toString())
+        cv.put(ADMIN_POS,position)
+        cv.put(ADMIN_COM,company)
+        cv.put(ADMIN_PIC,imgInByte)
+        dbUpdate.update(TABLE_NAME_ADMIN,cv,"admin_username=?", arrayOf(currentUsername))
 
     }
 
-//    public fun getDataFromTable(table:String):String{
-//        return "select * from $table"
-//    }
 
 
 

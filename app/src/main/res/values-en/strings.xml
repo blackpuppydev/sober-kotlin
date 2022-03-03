@@ -49,6 +49,7 @@
     <string name="old_pass">Old password</string>
     <string name="new_pass">New password</string>
     <string name="con_password">Confirm password</string>
+    <string name="con_new_password">Confirm new password</string>
     <string name="org_com">Organization/Company</string>
     <string name="occa_pos">Occupation/Position</string>
     <string name="change_pass">Change password</string>

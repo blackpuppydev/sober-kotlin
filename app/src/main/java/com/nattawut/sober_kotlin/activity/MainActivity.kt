@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_edit.setOnClickListener {
-            startActivity(Intent(this,EditProfileActivity::class.java))
+            startActivity(Intent(this,EditProfileActivity::class.java).putExtra("password",false))
         }
         
 
@@ -153,8 +153,8 @@ class MainActivity : AppCompatActivity() {
                     )
                 }"
 
-        company.text = "${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.COMPANY)}"
-        position.text = "${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.VACATION)}"
+        company.text = " : ${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.COMPANY)}"
+        position.text = " : ${dbManager?.getTextAdmin(AppPreference.getInstance().getUsername().toString(),TypeData.VACATION)}"
 
 
         //show manage team
@@ -165,8 +165,7 @@ class MainActivity : AppCompatActivity() {
         nav_menu.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.change_pass -> {
-
-//                    startActivity(Intent(this, RegisterActivity::class.java))
+                    startActivity(Intent(this, EditProfileActivity::class.java).putExtra("password",true))
                     true
                 }
                 R.id.setting -> {

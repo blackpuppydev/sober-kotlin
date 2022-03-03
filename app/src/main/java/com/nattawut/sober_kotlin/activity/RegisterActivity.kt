@@ -61,7 +61,7 @@ class RegisterActivity : AppCompatActivity() , FragmentEvent{
             LandingPage.REGISTER2 -> { fragment = RegisterFragment2() }
             LandingPage.LOGIN -> {
 
-                val pic:Bitmap = BitmapFactory.decodeResource(resources, R.drawable.user)
+                val pic:Bitmap = BitmapFactory.decodeResource(resources, R.drawable.get_pic)
 
                 dbManager?.insertAdmin(Admin(
                     firstName,

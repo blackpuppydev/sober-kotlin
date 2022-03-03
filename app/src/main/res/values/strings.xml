@@ -49,6 +49,7 @@
     <string name="old_pass">รหัสผ่านเก่า</string>
     <string name="new_pass">รหัสผ่านใหม่</string>
     <string name="con_password">ยืนยันรหัสผ่าน</string>
+    <string name="con_new_password">ยืนยันรหัสผ่านใหม่</string>
     <string name="org_com">องค์กร/บริษัท</string>
     <string name="occa_pos">อาชีพ/ตำแหน่ง</string>
     <string name="change_pass">เปลี่ยนรหัสผ่าน</string>
