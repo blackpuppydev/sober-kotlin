@@ -21,6 +21,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
+            android:visibility="gone"
             android:background="@drawable/ic_back_circle" />
 
         <ImageButton
@@ -67,7 +68,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kanitlight"
-                        android:text="เพศ"
+                        android:text="@string/gender"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -157,7 +158,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <RelativeLayout
                             android:id="@+id/sl_other_gender"
@@ -187,7 +189,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <RelativeLayout
                             android:id="@+id/sl_no_entry"
@@ -228,7 +231,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kanitlight"
-                        android:text="วัน/เดือน/ปีเกิด"
+                        android:text="@string/dob"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -275,6 +278,115 @@
 
 
                 </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="@string/group_blood"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/alert_blood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="*เลือกข้อใดข้อหนึ่ง"
+                        android:textColor="#FF0000"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/blood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/blood_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFD600"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="A"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/blood_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFD600"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="B"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/blood_ab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFD600"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="AB"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/blood_o"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFD600"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="O"
+                        android:textColor="@color/black" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kanitlight"
+                        android:text="@string/nation"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+
+                <Spinner
+                    android:id="@+id/nation"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kanitlight"
+                    android:tag="nation"
+                    android:visibility="gone" />
 
 
                 <!--    <LinearLayout-->
@@ -340,7 +452,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -369,7 +482,8 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kanitlight"
-                    android:tag="dis1" />
+                    android:tag="dis1"
+                    android:visibility="gone" />
 
 
                 <Spinner
@@ -378,7 +492,8 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kanitlight"
-                    android:tag="dis2" />
+                    android:tag="dis2"
+                    android:visibility="gone" />
 
                 <Spinner
                     android:id="@+id/disease3"
@@ -386,7 +501,8 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kanitlight"
-                    android:tag="dis3" />
+                    android:tag="dis3"
+                    android:visibility="gone" />
 
                 <Spinner
                     android:id="@+id/disease4"
@@ -394,7 +510,8 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kanitlight"
-                    android:tag="dis4" />
+                    android:tag="dis4"
+                    android:visibility="gone" />
 
 
                 <!--    <RadioGroup-->
@@ -499,6 +616,9 @@
                 <!--    </RadioGroup>-->
 
             </LinearLayout>
+
+
+
 
 
         </RelativeLayout>

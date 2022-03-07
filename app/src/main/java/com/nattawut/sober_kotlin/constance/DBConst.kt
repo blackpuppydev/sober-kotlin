@@ -13,6 +13,17 @@ object DBConst {
     const val EMP_VAC = "emp_vac"
     const val EMP_COM = "emp_com"
 
+    const val PSN_ID = "personal_id"
+    const val PSN_NAME = "personal_name"
+    const val PSN_LNAME = "personal_lname"
+    const val PSN_DOB = "personal_dob"
+    const val PSN_STATUS = "personal_status"
+    const val PSN_ADDRESS = "personal_address"
+    const val PSN_GENDER = "personal_gender"
+    const val PSN_CAREER = "personal_career"
+    const val PSN_EDU_LV = "personal_edu_level"
+    const val PSN_CONGENITAL_DIS = "personal_congenital_dis"
+
     const val ADMIN_ID = "admin_id"
     const val ADMIN_NAME = "admin_name"
     const val ADMIN_LNAME = "admin_lname"
@@ -29,5 +40,6 @@ object DBConst {
     const val TABLE_NAME_ADMIN = "admin"
     const val TABLE_NAME_EMP = "employee"
     const val TABLE_NAME_SCORE = "score"
+    const val TABLE_NAME_PERSONAL = "personal"
 
 }

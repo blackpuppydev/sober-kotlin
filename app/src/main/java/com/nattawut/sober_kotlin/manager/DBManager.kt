@@ -18,17 +18,23 @@ import com.nattawut.sober_kotlin.constance.DBConst.ADMIN_POS
 import com.nattawut.sober_kotlin.constance.DBConst.ADMIN_USERNAME
 import com.nattawut.sober_kotlin.constance.DBConst.DATABASE_NAME
 import com.nattawut.sober_kotlin.constance.DBConst.DATABASE_VERSION
-import com.nattawut.sober_kotlin.constance.DBConst.EMP_ID
-import com.nattawut.sober_kotlin.constance.DBConst.EMP_LNAME
-import com.nattawut.sober_kotlin.constance.DBConst.EMP_NAME
-import com.nattawut.sober_kotlin.constance.DBConst.EMP_VAC
 import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_ADMIN
-import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_EMP
 import java.io.ByteArrayOutputStream
 import android.graphics.BitmapFactory
 import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_ADDRESS
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_CAREER
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_CONGENITAL_DIS
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_DOB
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_EDU_LV
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_GENDER
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_ID
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_LNAME
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_NAME
+import com.nattawut.sober_kotlin.constance.DBConst.PSN_STATUS
 import com.nattawut.sober_kotlin.constance.DBConst.SYSTEM_ID
+import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_PERSONAL
 import com.nattawut.sober_kotlin.constance.TypeData
 
 
@@ -40,8 +46,9 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
         db?.execSQL("CREATE TABLE $TABLE_NAME_ADMIN ( $ADMIN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 " $SYSTEM_ID TEXT , $ADMIN_NAME TEXT , $ADMIN_LNAME TEXT , $ADMIN_MAIL TEXT , $ADMIN_USERNAME TEXT , $ADMIN_PASSWORD TEXT , $ADMIN_POS TEXT , $ADMIN_COM TEXT , $ADMIN_PIC BLOB)")
 
-        db?.execSQL("CREATE TABLE $TABLE_NAME_EMP ( $EMP_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                " $EMP_NAME TEXT , $EMP_LNAME TEXT , $EMP_VAC TEXT)")
+        db?.execSQL("CREATE TABLE $TABLE_NAME_PERSONAL ( $PSN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
+                " $PSN_NAME TEXT , $PSN_LNAME TEXT , $PSN_DOB TEXT, $PSN_STATUS TEXT, $PSN_ADDRESS TEXT, $PSN_GENDER TEXT, $PSN_CAREER TEXT, $PSN_EDU_LV TEXT, $PSN_CONGENITAL_DIS TEXT)")
+
 
 //        db?.execSQL("CREATE TABLE $TABLE_NAME_SCORE ( $EMP_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
 //                " $EMP_NAME TEXT , $EMP_LNAME TEXT , $EMP_VAC TEXT)")
@@ -100,7 +107,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
         val resultAdmin = getAdmin?.rawQuery("select * from $TABLE_NAME_ADMIN",null)
         if (resultAdmin != null) {
             while (resultAdmin.moveToNext()){
-                if(resultAdmin.getString(4).equals(username) && resultAdmin.getString(5).equals(password)){
+                if(resultAdmin.getString(5).equals(username) && resultAdmin.getString(6).equals(password)){
                     return true }
             }
         }
@@ -168,6 +175,13 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 //
 //    }
 
+    fun updatePassword(password: String,username: String){
+        val dbPassword:SQLiteDatabase = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(ADMIN_PASSWORD,password)
+        dbPassword.update(TABLE_NAME_ADMIN,cv,"admin_username=?", arrayOf(username))
+    }
+
     fun updateProfileAdmin(username: String,
                            firstname:String,
                            lastname:String,
@@ -196,7 +210,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
     }
 
 
-    fun getSystemID(length: Int) : String {
+    private fun getSystemID(length: Int) : String {
         val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
         return (1..length)
             .map { allowedChars.random() }

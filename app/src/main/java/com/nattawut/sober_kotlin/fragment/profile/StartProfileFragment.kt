@@ -13,7 +13,9 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
+import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.listener.FragmentEvent
+import com.nattawut.sober_kotlin.manager.DBManager
 import java.lang.ClassCastException
 import kotlin.random.Random
 
@@ -38,6 +40,8 @@ class StartProfileFragment : Fragment() {
 
     lateinit var listener:FragmentEvent
 
+    private var dbManager: DBManager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -58,12 +62,13 @@ class StartProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
 
         var v:View = inflater.inflate(R.layout.fragment_start_profile, container, false)
         ed_name = v.findViewById(R.id.ed_name)
         alertText = v.findViewById(R.id.alert)
         btn_confirm = v.findViewById(R.id.btn_confirm)
+
+        dbManager = DBManager(context!!)
 
 
         btn_confirm.setOnClickListener{
@@ -71,37 +76,9 @@ class StartProfileFragment : Fragment() {
             val text = ed_name.text.toString()
 
             if(text.isEmpty()|| text == "") {
-
-
-
-
-
-                alertText.text = "กรุณากรอกชื่อผู้รับการทดสอบ"
-
+                alertText.text = R.string.test_taker.toString()
             }else if(checkData(text)){
-
                 listener.onSuccess(LandingPage.HAVE_PROFILE)
-
-//                var dialog = Dialog(this)
-//                dialog.setContentView(R.layout.dialog_detect_profile)
-//                var btn_confirm:RelativeLayout = dialog.findViewById(R.id.btn_confirm)
-//                var btn_not:RelativeLayout = dialog.findViewById(R.id.btn_not)
-//
-//                btn_confirm.setOnClickListener {
-//
-//                    startActivity(Intent(this, SelectTypeActivity::class.java))
-//                }
-//
-//                btn_not.setOnClickListener {
-//                    dialog.dismiss()
-//                }
-//
-//                //check data from database
-//
-//
-//
-//                dialog.show()
-
             }else{
 //                startActivity(Intent(applicationContext, ProfileSecondActivity::class.java).putExtra("name",text))
                 listener.onSuccess(LandingPage.ADD_PROFILE)
@@ -116,6 +93,10 @@ class StartProfileFragment : Fragment() {
 
     private fun checkData(text:String):Boolean{
         //for test
+//        if(dbManager?.getTextAdmin(ed_name.text.toString(),TypeData.FIRSTNAME) == ed_name.text.toString()){
+//
+//        }
+
         return text == "test"
     }
 

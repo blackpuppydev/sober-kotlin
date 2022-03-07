@@ -2,16 +2,22 @@ package com.nattawut.sober_kotlin.constance
 
 object TypeData {
 
-    const val GENDER = "gender"
-    const val BIRTHDAY = "birthday"
+
     const val DISEASE1 = "disease1"
     const val DISEASE2 = "disease2"
     const val DISEASE3 = "disease3"
     const val DISEASE4 = "disease4"
-    const val RELATIONSHIP = "relationship"
-    const val ADDRESS = "address"
-    const val MORE_DETAIL = "more_detail"
-    const val PIC = "pic"
+
+
+    const val PSN_NAME = "personal_name"
+    const val PSN_LNAME = "personal_lname"
+    const val PSN_DOB = "personal_dob"
+    const val PSN_STATUS = "personal_status"
+    const val PSN_ADDRESS = "personal_address"
+    const val PSN_GENDER = "personal_gender"
+    const val PSN_CAREER = "personal_career"
+    const val PSN_EDU_LV = "personal_edu_level"
+    const val PSN_CONGENITAL_DIS = "personal_congenital_dis"
 
     const val USERNAME = "username"
     const val MAIL = "mail"

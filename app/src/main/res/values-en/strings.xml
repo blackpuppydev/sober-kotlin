@@ -14,6 +14,24 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="Nation">
+        <item>None</item>
+        <item>Thai</item>
+        <item>Cambodia</item>
+        <item>South Korea</item>
+        <item>China</item>
+        <item>Japan</item>
+        <item>Bangladesh</item>
+        <item>Myanmar</item>
+        <item>Philippines</item>
+        <item>Malaysia</item>
+        <item>Laos</item>
+        <item>Vietnam</item>
+        <item>United States of America</item>
+        <item>England</item>
+        <item>other</item>
+    </string-array>
+
     <string-array name="menu">
         <item>Change password</item>
         <item>Setting</item>
@@ -58,7 +76,6 @@
     <string name="edit">Edit</string>
     <string name="gender">Gender</string>
     <string name="dob">Date of birth</string>
-    <string name="blood">Blood type</string>
     <string name="address">Address</string>
     <string name="edu_level">Education level</string>
     <string name="user_mail">Username/Email</string>
@@ -70,7 +87,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="flname">Firstname - Lastname</string>
-
+    <string name="group_blood">Blood group</string>
 
     <string name="status">Status</string>
     <string name="single">Single</string>
@@ -81,7 +98,10 @@
     <string name="nation">Nationality</string>
     <string name="thai">Thai</string>
 
-
+    <string name="same_pass">Please enter the same password</string>
+    <string name="old_invalid">Old password is invalid</string>
+    <string name="infor_com">Please fill out the information completely.</string>
+    <string name="test_taker">Please enter the name of the test taker.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

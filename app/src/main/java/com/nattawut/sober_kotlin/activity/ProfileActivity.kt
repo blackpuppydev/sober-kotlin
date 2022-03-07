@@ -3,7 +3,6 @@ package com.nattawut.sober_kotlin.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.*
 import androidx.fragment.app.Fragment
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
@@ -15,7 +14,15 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
 
     var fragment: Fragment? = null
     var gender = ""
-    var birthday = ""
+    var dob = ""
+    var firstname = ""
+    var lastname = ""
+    var status = ""
+    var address = ""
+    var career = ""
+    var edu_lv = ""
+    var congenital_dis = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +74,6 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 .replace(R.id.fragment_profile,fragment,page)
                 .addToBackStack(page)
                 .commit()
-            Toast.makeText(applicationContext,"Page : $page",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -77,15 +83,11 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
 
     override fun onResult(data: String, type: String) {
 
-        Toast.makeText(this,"$type : $data",Toast.LENGTH_SHORT).show()
 
         when(type){
-            TypeData.GENDER -> { gender = data }
-            TypeData.BIRTHDAY -> { birthday = data }
-            TypeData.DISEASE1 -> { }
-            TypeData.DISEASE2 -> { }
-            TypeData.DISEASE3 -> { }
-            TypeData.DISEASE4 -> { }
+            TypeData.PSN_GENDER -> { gender = data }
+            TypeData.PSN_DOB -> { dob = data }
+
         }
         //gender
         //birthday

@@ -90,8 +90,8 @@ class RegisterFragment1 : Fragment() {
                     listener.onResult(getMail.text.toString(),TypeData.MAIL)
                     listener.onResult(getPassword.text.toString(),TypeData.PASSWORD)
                     listener.onSuccess(LandingPage.REGISTER2)
-                }else Toast.makeText(context,"กรุณากรอกรหัสผ่านให้ตรงกัน",Toast.LENGTH_SHORT).show()
-            }else Toast.makeText(context,"กรุณากรอกข้อมูลให้ครบถ้วน",Toast.LENGTH_SHORT).show()
+                }else Toast.makeText(context,R.string.same_pass,Toast.LENGTH_SHORT).show()
+            }else Toast.makeText(context,R.string.infor_com,Toast.LENGTH_SHORT).show()
         }
 
         btn_hide.setOnClickListener {

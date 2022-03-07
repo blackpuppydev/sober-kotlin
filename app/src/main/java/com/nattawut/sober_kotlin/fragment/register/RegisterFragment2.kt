@@ -86,7 +86,7 @@ class RegisterFragment2 : Fragment() {
                 listener.onResult(getCompany.text.toString(), TypeData.COMPANY)
                 listener.onResult(getVacation.text.toString(), TypeData.VACATION)
                 listener.onSuccess(LandingPage.LOGIN)
-            }else Toast.makeText(context,"กรุณากรอกข้อมูลให้ครบถ้วน", Toast.LENGTH_SHORT).show()
+            }else Toast.makeText(context,R.string.infor_com, Toast.LENGTH_SHORT).show()
         }
 
 

@@ -120,12 +120,12 @@ class AddProfileFragment : Fragment() {
 
             when(goToNext){
                 true -> {
-                    listener.onResult(gender.toString(),TypeData.GENDER)
-                    listener.onResult(showBirthday.text.toString(),TypeData.BIRTHDAY)
-                    listener.onResult(dis1,TypeData.DISEASE1)
-                    listener.onResult(dis2,TypeData.DISEASE2)
-                    listener.onResult(dis3,TypeData.DISEASE3)
-                    listener.onResult(dis4,TypeData.DISEASE4)
+//                    listener.onResult(gender.toString(),TypeData.GENDER)
+//                    listener.onResult(showBirthday.text.toString(),TypeData.BIRTHDAY)
+//                    listener.onResult(dis1,TypeData.DISEASE1)
+//                    listener.onResult(dis2,TypeData.DISEASE2)
+//                    listener.onResult(dis3,TypeData.DISEASE3)
+//                    listener.onResult(dis4,TypeData.DISEASE4)
                     listener.onSuccess(LandingPage.ADD_PROFILE2)
                 }
                 false -> return@setOnClickListener

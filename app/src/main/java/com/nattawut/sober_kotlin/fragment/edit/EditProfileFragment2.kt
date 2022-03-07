@@ -140,22 +140,17 @@ class EditProfileFragment2 : Fragment() {
                 && mail.text.toString() != "" && company.text.toString() != "" && position.text.toString() != ""){
 
                 //save
-
-
                 dbManager?.updateProfileAdmin(username.text.toString(),
                     firstname.text.toString(),lastname.text.toString(),
                     mail.text.toString(),company.text.toString(),position.text.toString(),pic.drawToBitmap(),
                     AppPreference.getInstance().getUsername().toString())
 
-
                 AppPreference.getInstance().setUsername(username.text.toString())
 
                 listener.onSuccess(LandingPage.HOME)
 
+            }else Toast.makeText(context,R.string.infor_com,Toast.LENGTH_SHORT).show()
 
-            }else{
-                Toast.makeText(context,"Empty",Toast.LENGTH_SHORT).show()
-            }
 
 
 
