@@ -67,6 +67,9 @@
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="edit_pro">Edit profile</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="flname">Firstname - Lastname</string>
 
 
     <string name="status">Status</string>

@@ -17,10 +17,11 @@ import com.nattawut.sober_kotlin.R
 
 open class BaseActivity : AppCompatActivity() {
 
-    lateinit var btn_home:ImageButton
+    lateinit var btn_back:ImageButton
     lateinit var btn_next:RelativeLayout
     lateinit var content:FrameLayout
     lateinit var bg_base:RelativeLayout
+    lateinit var btn_exit:ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,15 +34,18 @@ open class BaseActivity : AppCompatActivity() {
     protected fun getBaseView(view: View?) : View {
 
         var v : View = layoutInflater.inflate(R.layout.activity_base,null)
-        btn_home = v.findViewById(R.id.btn_home)
+        btn_back = v.findViewById(R.id.btn_back)
+        btn_exit = v.findViewById(R.id.btn_exit)
         btn_next = v.findViewById(R.id.btn_next)
         content = v.findViewById(R.id.content)
         bg_base = v.findViewById(R.id.bg_base)
 
-        btn_home.setOnClickListener{
+        btn_back.setOnClickListener{
+            super.onBackPressed()
+        }
 
+        btn_exit.setOnClickListener {
             finish()
-//            super.onBackPressed()
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)

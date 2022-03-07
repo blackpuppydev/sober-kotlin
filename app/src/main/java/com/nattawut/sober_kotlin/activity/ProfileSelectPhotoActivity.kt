@@ -21,7 +21,7 @@ import com.nattawut.sober_kotlin.R
 class ProfileSelectPhotoActivity : BaseActivity() {
 
 
-    lateinit var btn_back: ImageButton
+//    lateinit var btn_back: ImageButton
     lateinit var pic: ImageView
     lateinit var dialog: Dialog
     lateinit var btn_photo:RelativeLayout
@@ -48,14 +48,14 @@ class ProfileSelectPhotoActivity : BaseActivity() {
             startActivity(Intent(this,SelectTypeActivity::class.java))
         }
 
-        btn_back = findViewById(R.id.btn_back)
+//        btn_back = findViewById(R.id.btn_back)
         pic = findViewById(R.id.pic)
         btn_photo = findViewById(R.id.btn_photo)
 
-        btn_back.setOnClickListener{
-            finish()
-            super.onBackPressed()
-        }
+//        btn_back.setOnClickListener{
+//            finish()
+//            super.onBackPressed()
+//        }
 
         btn_photo.setOnClickListener {
 

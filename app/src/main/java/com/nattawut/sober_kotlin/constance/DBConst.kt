@@ -5,7 +5,7 @@ object DBConst {
     const val DATABASE_NAME = "customer"
     const val DATABASE_VERSION = 1
 
-    const val SYSTEM_ID = "Idsys"
+    const val SYSTEM_ID = "sys_id"
 
     const val EMP_ID = "emp_id"
     const val EMP_NAME = "emp_name"

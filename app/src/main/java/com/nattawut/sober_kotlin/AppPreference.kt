@@ -12,6 +12,7 @@ class AppPreference {
     private var APPNAME = "APP"
     private var PASSWORD = "PASSWORD"
     private var LANGUAGE = "LANGUAGE"
+    private var SYS_ID = "SYS_ID"
 
     private var MASTER = "master"
 
@@ -61,6 +62,17 @@ class AppPreference {
     fun getMaster(): Boolean {
         return sharedPreference.getBoolean(MASTER,false)
     }
+
+    fun setSystemID(systemID:String){
+        sharedPreference.edit().putString(SYS_ID,systemID).apply()
+    }
+
+    fun getSystemID(): String? {
+        return sharedPreference.getString(SYS_ID, "")
+    }
+
+
+
 
 
 }

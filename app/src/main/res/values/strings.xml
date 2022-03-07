@@ -67,6 +67,9 @@
     <string name="firstname">ชื่อจริง</string>
     <string name="lastname">นามสกุล</string>
     <string name="edit_pro">แก้ไขข้อมูลส่วนตัว</string>
+    <string name="yes">ใช่</string>
+    <string name="no">ไม่ใช่</string>
+    <string name="flname">ชื่อ-นามสกุล</string>
 
     <string name="status">สถานะสมรส</string>
     <string name="single">โสด</string>

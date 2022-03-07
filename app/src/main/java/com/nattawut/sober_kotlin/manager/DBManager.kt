@@ -28,6 +28,7 @@ import java.io.ByteArrayOutputStream
 import android.graphics.BitmapFactory
 import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
+import com.nattawut.sober_kotlin.constance.DBConst.SYSTEM_ID
 import com.nattawut.sober_kotlin.constance.TypeData
 
 
@@ -37,7 +38,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
     override fun onCreate(db: SQLiteDatabase?) {
 
         db?.execSQL("CREATE TABLE $TABLE_NAME_ADMIN ( $ADMIN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                " $ADMIN_NAME TEXT , $ADMIN_LNAME TEXT , $ADMIN_MAIL TEXT , $ADMIN_USERNAME TEXT , $ADMIN_PASSWORD TEXT , $ADMIN_POS TEXT , $ADMIN_COM TEXT , $ADMIN_PIC BLOB)")
+                " $SYSTEM_ID TEXT , $ADMIN_NAME TEXT , $ADMIN_LNAME TEXT , $ADMIN_MAIL TEXT , $ADMIN_USERNAME TEXT , $ADMIN_PASSWORD TEXT , $ADMIN_POS TEXT , $ADMIN_COM TEXT , $ADMIN_PIC BLOB)")
 
         db?.execSQL("CREATE TABLE $TABLE_NAME_EMP ( $EMP_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 " $EMP_NAME TEXT , $EMP_LNAME TEXT , $EMP_VAC TEXT)")
@@ -60,7 +61,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
         val dbMaster = this.writableDatabase
         val cv = ContentValues()
-//        cv.put(SYSTEM_ID,admin.id)
+        cv.put(SYSTEM_ID,getSystemID(6))
         cv.put(ADMIN_NAME,"Master")
         cv.put(ADMIN_LNAME,"Master")
         cv.put(ADMIN_MAIL,"master@email.com")
@@ -81,7 +82,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
         val dbAdmin = this.writableDatabase
         val cv = ContentValues()
-//        cv.put(SYSTEM_ID,admin.id)
+        cv.put(SYSTEM_ID,getSystemID(5))
         cv.put(ADMIN_NAME,admin.name)
         cv.put(ADMIN_LNAME,admin.lname)
         cv.put(ADMIN_MAIL,admin.mail)
@@ -129,6 +130,9 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
         val getAdmin = this.writableDatabase
 
         when (type) {
+            SYSTEM_ID -> {
+                queryText = "select $SYSTEM_ID from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
+            }
             TypeData.FIRSTNAME -> {
                 queryText = "select $ADMIN_NAME from $TABLE_NAME_ADMIN where $ADMIN_USERNAME = '$text'"
             }
@@ -178,6 +182,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
         val dbUpdate:SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
+        //system id
         cv.put(ADMIN_NAME,firstname)
         cv.put(ADMIN_LNAME,lastname)
         cv.put(ADMIN_MAIL,mail)
@@ -190,6 +195,13 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
     }
 
+
+    fun getSystemID(length: Int) : String {
+        val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
+        return (1..length)
+            .map { allowedChars.random() }
+            .joinToString("")
+    }
 
 
 

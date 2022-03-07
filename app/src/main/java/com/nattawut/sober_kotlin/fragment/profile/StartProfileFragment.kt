@@ -15,6 +15,7 @@ import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.listener.FragmentEvent
 import java.lang.ClassCastException
+import kotlin.random.Random
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +35,6 @@ class StartProfileFragment : Fragment() {
     lateinit var ed_name: EditText
     lateinit var alertText: TextView
     lateinit var btn_confirm: RelativeLayout
-    lateinit var btn_back_fm : ImageButton
 
     lateinit var listener:FragmentEvent
 
@@ -57,27 +57,26 @@ class StartProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         var v:View = inflater.inflate(R.layout.fragment_start_profile, container, false)
         ed_name = v.findViewById(R.id.ed_name)
         alertText = v.findViewById(R.id.alert)
         btn_confirm = v.findViewById(R.id.btn_confirm)
-        btn_back_fm = v.findViewById(R.id.btn_back_fm)
-
-        btn_back_fm.setOnClickListener {
-            listener.onSuccess(LandingPage.BACK)
-        }
 
 
         btn_confirm.setOnClickListener{
 
-            var text = ed_name.text.toString()
-            Log.d("ProfileActivity","Profile :$text")
+            val text = ed_name.text.toString()
 
-            if(text.isEmpty()||text.equals("")) {
-                alertText.setText("กรุณากรอกชื่อผู้รับการทดสอบ")
+            if(text.isEmpty()|| text == "") {
+
+
+
+
+
+                alertText.text = "กรุณากรอกชื่อผู้รับการทดสอบ"
 
             }else if(checkData(text)){
 
@@ -119,6 +118,7 @@ class StartProfileFragment : Fragment() {
         //for test
         return text == "test"
     }
+
 
 
 

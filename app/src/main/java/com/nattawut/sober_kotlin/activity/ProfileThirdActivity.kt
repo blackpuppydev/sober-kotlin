@@ -13,7 +13,7 @@ import com.nattawut.sober_kotlin.R
 class ProfileThirdActivity : BaseActivity() {
 
     lateinit var alert_relationship: TextView
-    lateinit var btn_back: ImageButton
+//    lateinit var btn_back: ImageButton
 
 
 
@@ -30,12 +30,12 @@ class ProfileThirdActivity : BaseActivity() {
 
     private fun initView(){
         alert_relationship = findViewById(R.id.alert_relationship)
-        btn_back = findViewById(R.id.btn_back)
-
-        btn_back.setOnClickListener{
-            finish()
-            super.onBackPressed()
-        }
+//        btn_back = findViewById(R.id.btn_back)
+//
+//        btn_back.setOnClickListener{
+//            finish()
+//            super.onBackPressed()
+//        }
 
         btn_next.setOnClickListener{
             startActivity(Intent(applicationContext,ProfileSelectPhotoActivity::class.java))

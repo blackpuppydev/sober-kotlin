@@ -27,7 +27,7 @@ class ProfileSecondActivity : BaseActivity() {
     lateinit var name:TextView
     lateinit var dialog:Dialog
     lateinit var birthday:LinearLayout
-    lateinit var btn_back:ImageButton
+//    lateinit var btn_back:ImageButton
     lateinit var showBirthday:TextView
 
     //alert

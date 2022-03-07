@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.R
+import com.nattawut.sober_kotlin.constance.DBConst
 import com.nattawut.sober_kotlin.manager.DBManager
 import com.nattawut.sober_kotlin.view.dialog.LoadingDialog
 import kotlinx.android.synthetic.main.activity_login.*
@@ -43,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
             if (dbManager!!.checkAdmin(username.text.toString(),password.text.toString())){
                 AppPreference.getInstance().setUsername(username.text.toString())
                 AppPreference.getInstance().setPassword(password.text.toString())
+                AppPreference.getInstance().setSystemID(dbManager!!.getTextAdmin(username.text.toString(),DBConst.SYSTEM_ID).toString())
 
                 loadingDialog?.showDialog("Please wait")
 
