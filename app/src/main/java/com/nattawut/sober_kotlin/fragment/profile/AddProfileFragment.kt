@@ -37,23 +37,22 @@ class AddProfileFragment : Fragment() {
 
     private lateinit var sl_male:RelativeLayout
     private lateinit var sl_female:RelativeLayout
-    private lateinit var sl_other_gender:RelativeLayout
-    private lateinit var sl_no_entry:RelativeLayout
     private lateinit var getBirthday:LinearLayout
     private lateinit var showBirthday:TextView
     private lateinit var alert_birthday:TextView
     private lateinit var alert_gender:TextView
+    private lateinit var alert_blood:TextView
     private lateinit var btn_confirm:RelativeLayout
     private lateinit var btn_back_fm:ImageButton
-    lateinit var disease1:Spinner
-    lateinit var disease2:Spinner
-    lateinit var disease3:Spinner
-    lateinit var disease4:Spinner
+    private lateinit var nation:Spinner
+
 
     var dis1 = "ไม่มี"
     var dis2 = "ไม่มี"
     var dis3 = "ไม่มี"
     var dis4 = "ไม่มี"
+
+    var nation_text = ""
 
     //values choice
     //Calendar
@@ -79,33 +78,25 @@ class AddProfileFragment : Fragment() {
         }catch (e:ClassCastException){}
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
-        var v:View = inflater.inflate(R.layout.fragment_add_profile, container, false)
+        val v:View = inflater.inflate(R.layout.fragment_add_profile, container, false)
 
         //init view
         sl_male = v.findViewById(R.id.sl_male)
         sl_female = v.findViewById(R.id.sl_female)
-        sl_other_gender = v.findViewById(R.id.sl_other_gender)
-        sl_no_entry = v.findViewById(R.id.sl_no_entry)
         getBirthday = v.findViewById(R.id.getBirthday)
         showBirthday = v.findViewById(R.id.showBirthday)
         alert_gender = v.findViewById(R.id.alert_gender)
         alert_birthday = v.findViewById(R.id.alert_birthday)
         btn_confirm = v.findViewById(R.id.btn_confirm)
         btn_back_fm = v.findViewById(R.id.btn_back_fm)
-        disease1 = v.findViewById(R.id.disease1)
-        disease2 = v.findViewById(R.id.disease2)
-        disease3 = v.findViewById(R.id.disease3)
-        disease4 = v.findViewById(R.id.disease4)
+        nation = v.findViewById(R.id.nation)
+        alert_blood = v.findViewById(R.id.alert_blood)
 
-        setAdapterDisease(disease1)
-        setAdapterDisease(disease2)
-        setAdapterDisease(disease3)
-        setAdapterDisease(disease4)
+
+
+        setAdapterNation(nation)
 
 
         btn_confirm.setOnClickListener {
@@ -120,12 +111,13 @@ class AddProfileFragment : Fragment() {
 
             when(goToNext){
                 true -> {
-//                    listener.onResult(gender.toString(),TypeData.GENDER)
-//                    listener.onResult(showBirthday.text.toString(),TypeData.BIRTHDAY)
-//                    listener.onResult(dis1,TypeData.DISEASE1)
-//                    listener.onResult(dis2,TypeData.DISEASE2)
-//                    listener.onResult(dis3,TypeData.DISEASE3)
-//                    listener.onResult(dis4,TypeData.DISEASE4)
+                    listener.onResult(gender.toString(), TypeData.PSN_GENDER)
+                    listener.onResult(showBirthday.text.toString(),TypeData.PSN_DOB)
+                    listener.onResult(getTypeBlood(v),TypeData.PSN_BLOOD)
+                    listener.onResult(nation_text,TypeData.PSN_NATION)
+
+                    Toast.makeText(context!!,"${gender.toString()} ${showBirthday.text} $nation_text",Toast.LENGTH_SHORT).show()
+
                     listener.onSuccess(LandingPage.ADD_PROFILE2)
                 }
                 false -> return@setOnClickListener
@@ -140,30 +132,13 @@ class AddProfileFragment : Fragment() {
             gender = "male"
             sl_male.setBackgroundResource(R.drawable.selector_gender2)
             sl_female.setBackgroundResource(R.drawable.selector_gender)
-            sl_other_gender.setBackgroundResource(R.drawable.selector_gender)
-            sl_no_entry.setBackgroundResource(R.drawable.selector_gender)
         }
         sl_female.setOnClickListener {
             gender = "female"
             sl_male.setBackgroundResource(R.drawable.selector_gender)
             sl_female.setBackgroundResource(R.drawable.selector_gender2)
-            sl_other_gender.setBackgroundResource(R.drawable.selector_gender)
-            sl_no_entry.setBackgroundResource(R.drawable.selector_gender)
         }
-        sl_other_gender.setOnClickListener {
-            gender = "other"
-            sl_male.setBackgroundResource(R.drawable.selector_gender)
-            sl_female.setBackgroundResource(R.drawable.selector_gender)
-            sl_other_gender.setBackgroundResource(R.drawable.selector_gender2)
-            sl_no_entry.setBackgroundResource(R.drawable.selector_gender)
-        }
-        sl_no_entry.setOnClickListener {
-            gender = "no"
-            sl_male.setBackgroundResource(R.drawable.selector_gender)
-            sl_female.setBackgroundResource(R.drawable.selector_gender)
-            sl_other_gender.setBackgroundResource(R.drawable.selector_gender)
-            sl_no_entry.setBackgroundResource(R.drawable.selector_gender2)
-        }
+
 
         getBirthday.setOnClickListener {
 
@@ -199,30 +174,38 @@ class AddProfileFragment : Fragment() {
     }
 
 
+    private fun setAdapterNation(nation: Spinner) {
 
-    private fun setAdapterDisease(disease: Spinner) {
-
-        val diseaseArray = resources.getStringArray(R.array.Disease)
+        val nationArray = resources.getStringArray(R.array.Nation)
         val adapter = ArrayAdapter(context!!,
-            android.R.layout.simple_spinner_item, diseaseArray)
-        disease.adapter = adapter
+            android.R.layout.simple_spinner_item, nationArray)
+        nation.adapter = adapter
 
-        disease.onItemSelectedListener = object :
+        nation.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                val tag = disease.tag
-                when {
-                    tag.equals("dis1") -> dis1 = diseaseArray[position].toString()
-                    tag.equals("dis2") -> dis2 = diseaseArray[position].toString()
-                    tag.equals("dis3") -> dis3 = diseaseArray[position].toString()
-                    tag.equals("dis4") -> dis4 = diseaseArray[position].toString()
-                }
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                 nation_text = nationArray[position].toString()
             }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // write code to perform some action
-            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
+    }
+
+    private fun getTypeBlood(v:View):String{
+
+        val selectBlood = v.findViewById<RadioGroup>(R.id.blood).checkedRadioButtonId
+
+        return if(selectBlood == -1){
+            alert_blood.visibility = View.VISIBLE
+            goToNext = false
+            "none"
+        }else{
+            alert_blood.visibility = View.GONE
+            goToNext = true
+            val selectChoiceBlood = v.findViewById<RadioButton>(selectBlood)
+            selectChoiceBlood.text.toString()
+
+        }
+
     }
 
 

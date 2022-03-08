@@ -32,6 +32,18 @@
         <item>อื่นๆ</item>
     </string-array>
 
+    <string-array name="Edu_level">
+        <item>ไม่ทราบ</item>
+        <item>อนุบาล</item>
+        <item>ประถมศึกษา</item>
+        <item>มัธยมศึกษาตอนต้น</item>
+        <item>มัธยมศึกษาตอนปลาย</item>
+        <item>ปวช/ปวส/เทคนิค</item>
+        <item>ปริญญาตรี</item>
+        <item>ปริญญาโท</item>
+        <item>ปริญญาเอก</item>
+    </string-array>
+
     <string-array name="menu">
         <item>เปลี่ยนรหัสผ่าน</item>
         <item>ตั้งค่า</item>
@@ -88,6 +100,13 @@
     <string name="no">ไม่ใช่</string>
     <string name="flname">ชื่อ-นามสกุล</string>
     <string name="group_blood">กรุ๊ปเลือด</string>
+    <string name="choose_one">เลือกข้อใดข้อหนึ่ง</string>
+    <string name="disease">โรคประจำตัว</string>
+    <string name="have">มี</string>
+    <string name="have_not">ไม่มี</string>
+    <string name="pl_enter">โปรดระบุ</string>
+    <string name="note">โน๊ต</string>
+    <string name="pic">ภาพถ่าย</string>
 
     <string name="status">สถานะสมรส</string>
     <string name="single">โสด</string>

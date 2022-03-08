@@ -32,6 +32,18 @@
         <item>other</item>
     </string-array>
 
+    <string-array name="Edu_level">
+        <item>None</item>
+        <item>Kindergarten</item>
+        <item>Elementary School</item>
+        <item>Junior High School</item>
+        <item>Senior High School</item>
+        <item>Voc. Cert./High Voc. Cert./Technical College</item>
+        <item>Bachelor Degrees</item>
+        <item>Master Degrees</item>
+        <item>Doctor Degrees</item>
+    </string-array>
+
     <string-array name="menu">
         <item>Change password</item>
         <item>Setting</item>
@@ -88,6 +100,13 @@
     <string name="no">No</string>
     <string name="flname">Firstname - Lastname</string>
     <string name="group_blood">Blood group</string>
+    <string name="choose_one">choose one</string>
+    <string name="disease">Congenital disease</string>
+    <string name="have">Have</string>
+    <string name="have_not">Haven\'t</string>
+    <string name="pl_enter">Please enter</string>
+    <string name="note">Note</string>
+    <string name="pic">Picture</string>
 
     <string name="status">Status</string>
     <string name="single">Single</string>

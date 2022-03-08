@@ -1,5 +1,6 @@
 package com.nattawut.sober_kotlin.api
 
+import com.nattawut.sober_kotlin.AppPreference
 import com.nattawut.sober_kotlin.constance.DBConst
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -13,6 +14,8 @@ interface SqliteApi {
 
         private const val BASE_URL = "http://192.168.1.34"
         //query
+
+
 
         fun create() : SqliteApi {
 

@@ -21,8 +21,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:background="@drawable/ic_back_circle" />
+            android:background="@drawable/ic_back_circle"
+            android:visibility="gone" />
 
         <ImageButton
             android:id="@+id/component_page"
@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="12dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/ic_component_2" />
 
 
@@ -47,6 +48,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="match_parent">
 
 
@@ -54,7 +57,9 @@
                 android:id="@+id/linear1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_centerInParent="true"
                 android:orientation="vertical"
+                android:layout_marginTop="20sp"
                 android:padding="20dp">
 
 
@@ -78,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/kanitregular"
-                        android:text="*เลือกข้อใดข้อหนึ่ง"
+                        android:text="@string/choose_one"
                         android:textColor="#FF0000"
                         android:visibility="invisible" />
 
@@ -265,7 +270,7 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/kanitregular"
                         android:gravity="center"
-                        android:hint="โปรดระบุ"
+                        android:hint="@string/pl_enter"
                         android:textSize="15dp" />
 
                     <ImageView
@@ -300,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/kanitlight"
-                        android:text="*เลือกข้อใดข้อหนึ่ง"
+                        android:text="@string/choose_one"
                         android:textColor="#FF0000"
                         android:visibility="invisible" />
 
@@ -311,18 +316,18 @@
                     android:id="@+id/blood"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/blood_a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFD600"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:buttonTint="#FFD600"
                         android:fontFamily="@font/kanitlight"
+                        android:gravity="center"
                         android:text="A"
                         android:textColor="@color/black" />
 
@@ -330,10 +335,10 @@
                         android:id="@+id/blood_b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFD600"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:buttonTint="#FFD600"
                         android:fontFamily="@font/kanitlight"
+                        android:gravity="center"
                         android:text="B"
                         android:textColor="@color/black" />
 
@@ -341,10 +346,10 @@
                         android:id="@+id/blood_ab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFD600"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:buttonTint="#FFD600"
                         android:fontFamily="@font/kanitlight"
+                        android:gravity="center"
                         android:text="AB"
                         android:textColor="@color/black" />
 
@@ -352,10 +357,10 @@
                         android:id="@+id/blood_o"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFD600"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:buttonTint="#FFD600"
                         android:fontFamily="@font/kanitlight"
+                        android:gravity="center"
                         android:text="O"
                         android:textColor="@color/black" />
 
@@ -385,8 +390,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kanitlight"
-                    android:tag="nation"
-                    android:visibility="gone" />
+                    android:tag="nation" />
 
 
                 <!--    <LinearLayout-->
@@ -641,7 +645,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/kanitregular"
-            android:text="ต่อไป"
+            android:text="@string/next"
             android:textColor="@color/white"
             android:textSize="18dp" />
 

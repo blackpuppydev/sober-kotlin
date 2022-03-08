@@ -19,7 +19,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/ic_back_circle" />
+            android:background="@drawable/ic_back_circle"
+            android:visibility="gone" />
 
         <ImageButton
             android:id="@+id/component_page"
@@ -27,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="12dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/ic_component_3" />
 
 
@@ -52,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kanitlight"
-                android:text="สถานะสมรส"
+                android:text="@string/status"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -62,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/kanitlight"
-                android:text="*เลือกข้อใดข้อหนึ่ง"
+                android:text="@string/choose_one"
                 android:textColor="#FF0000"
                 android:visibility="invisible" />
 
@@ -82,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFD600"
                 android:fontFamily="@font/kanitlight"
-                android:text="โสด"
+                android:text="@string/single"
                 android:textColor="@color/black" />
 
             <RadioButton
@@ -91,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFD600"
                 android:fontFamily="@font/kanitlight"
-                android:text="สมรส"
+                android:text="@string/married"
                 android:textColor="@color/black" />
 
             <RadioButton
@@ -100,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFD600"
                 android:fontFamily="@font/kanitlight"
-                android:text="หย่าร้าง"
+                android:text="@string/separated"
                 android:textColor="@color/black" />
 
             <RadioButton
@@ -109,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFD600"
                 android:fontFamily="@font/kanitlight"
-                android:text="ไม่ระบุ"
+                android:text="@string/no_emp"
                 android:textColor="@color/black" />
 
         </RadioGroup>
@@ -118,38 +120,126 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/kanitlight"
-                android:padding="15dp"
-                android:text="ที่อยู่" />
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-
-            <EditText
-                android:id="@+id/AddressAdd"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/edit_text_box"
+            <TextView
+                android:id="@+id/alert_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/kanitlight"
-                android:hint="ระบุที่อยู่"
-                android:padding="15dp"
-                android:textAlignment="textStart"
-                android:textSize="12dp" />
+                android:text="@string/choose_one"
+                android:textColor="#FF0000"
+                android:visibility="invisible" />
 
         </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/addressAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_box"
+            android:fontFamily="@font/kanitlight"
+            android:hint="@string/pl_enter"
+            android:padding="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/edu_level"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_edu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/choose_one"
+                android:textColor="#FF0000"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+        <Spinner
+            android:id="@+id/edu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_box"
+            android:fontFamily="@font/kanitlight"
+            android:padding="15dp"
+            android:tag="education" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/occa_pos"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_occupation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/infor_com"
+                android:textColor="#FF0000"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/occupationAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_box"
+            android:fontFamily="@font/kanitlight"
+            android:hint="@string/pl_enter"
+            android:padding="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
@@ -170,7 +260,7 @@
                 android:background="@drawable/edit_text_box"
                 android:fontFamily="@font/kanitlight"
                 android:hint="ระบุข้อมูลเพิ่มเติม เช่น พฤติกรรม ลักษณะอาการ
-การวินิจฉัยทางแพทย์ คำสัมภาษณ์ เป็นต้น"
+                การวินิจฉัยทางแพทย์ คำสัมภาษณ์ เป็นต้น"
                 android:padding="15dp"
                 android:textAlignment="textStart"
                 android:textSize="12dp" />

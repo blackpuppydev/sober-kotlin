@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nattawut.sober_kotlin.R
+import com.nattawut.sober_kotlin.model.MenuOther
 import com.nattawut.sober_kotlin.model.MenuType
 
 public abstract class TypeTestAdapter(var type: ArrayList<MenuType>) : RecyclerView.Adapter<ItemTypeHolder>() { //RecyclerView.ViewHolder

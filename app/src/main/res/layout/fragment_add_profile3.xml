@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+            android:visibility="gone"
             android:id="@+id/btn_back_fm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,16 +29,143 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="12dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/ic_component_4" />
 
 
     </RelativeLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar3"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/disease"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/choose_one"
+                android:textColor="#FF0000"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:id="@+id/disease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/have"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FFD600"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/have"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/notHave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FFD600"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/have_not"
+                android:textColor="@color/black" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/diseaseAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_box"
+            android:fontFamily="@font/kanitlight"
+            android:hint="@string/pl_enter"
+            android:padding="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanitlight"
+                android:text="@string/other_gen"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:id="@+id/list"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bar3"
+        android:visibility="gone"
         android:layout_centerInParent="true"
         android:layout_marginTop="100dp"
         android:orientation="vertical">
@@ -82,8 +210,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/selector_button2"
-                >
+                android:background="@drawable/selector_button2">
 
 
                 <TextView
@@ -119,7 +246,6 @@
 
 
             </RelativeLayout>
-
 
 
         </LinearLayout>

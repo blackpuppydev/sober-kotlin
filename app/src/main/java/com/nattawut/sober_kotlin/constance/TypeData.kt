@@ -15,6 +15,8 @@ object TypeData {
     const val PSN_STATUS = "personal_status"
     const val PSN_ADDRESS = "personal_address"
     const val PSN_GENDER = "personal_gender"
+    const val PSN_BLOOD = "personal_blood"
+    const val PSN_NATION = "personal_nation"
     const val PSN_CAREER = "personal_career"
     const val PSN_EDU_LV = "personal_edu_level"
     const val PSN_CONGENITAL_DIS = "personal_congenital_dis"

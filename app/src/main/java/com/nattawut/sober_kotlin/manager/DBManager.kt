@@ -36,6 +36,8 @@ import com.nattawut.sober_kotlin.constance.DBConst.PSN_STATUS
 import com.nattawut.sober_kotlin.constance.DBConst.SYSTEM_ID
 import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_PERSONAL
 import com.nattawut.sober_kotlin.constance.TypeData
+import com.nattawut.sober_kotlin.constance.TypeData.PSN_BLOOD
+import com.nattawut.sober_kotlin.constance.TypeData.PSN_NATION
 
 
 class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
@@ -44,10 +46,12 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
     override fun onCreate(db: SQLiteDatabase?) {
 
         db?.execSQL("CREATE TABLE $TABLE_NAME_ADMIN ( $ADMIN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                " $SYSTEM_ID TEXT , $ADMIN_NAME TEXT , $ADMIN_LNAME TEXT , $ADMIN_MAIL TEXT , $ADMIN_USERNAME TEXT , $ADMIN_PASSWORD TEXT , $ADMIN_POS TEXT , $ADMIN_COM TEXT , $ADMIN_PIC BLOB)")
+                " $SYSTEM_ID TEXT , $ADMIN_NAME TEXT , $ADMIN_LNAME TEXT , $ADMIN_MAIL TEXT , $ADMIN_USERNAME TEXT ," +
+                " $ADMIN_PASSWORD TEXT , $ADMIN_POS TEXT , $ADMIN_COM TEXT , $ADMIN_PIC BLOB)")
 
         db?.execSQL("CREATE TABLE $TABLE_NAME_PERSONAL ( $PSN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                " $PSN_NAME TEXT , $PSN_LNAME TEXT , $PSN_DOB TEXT, $PSN_STATUS TEXT, $PSN_ADDRESS TEXT, $PSN_GENDER TEXT, $PSN_CAREER TEXT, $PSN_EDU_LV TEXT, $PSN_CONGENITAL_DIS TEXT)")
+                " $PSN_NAME TEXT , $PSN_LNAME TEXT , $PSN_DOB TEXT, $PSN_NATION TEXT, $PSN_BLOOD TEXT, $PSN_STATUS TEXT," +
+                " $PSN_ADDRESS TEXT, $PSN_GENDER TEXT, $PSN_CAREER TEXT, $PSN_EDU_LV TEXT, $PSN_CONGENITAL_DIS TEXT)")
 
 
 //        db?.execSQL("CREATE TABLE $TABLE_NAME_SCORE ( $EMP_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +

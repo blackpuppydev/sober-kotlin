@@ -15,6 +15,8 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
     var fragment: Fragment? = null
     var gender = ""
     var dob = ""
+    var blood = ""
+    var nation = ""
     var firstname = ""
     var lastname = ""
     var status = ""
@@ -83,21 +85,19 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
 
     override fun onResult(data: String, type: String) {
 
-
         when(type){
+            TypeData.PSN_NAME -> { firstname = data }
+            TypeData.PSN_LNAME -> { lastname = data }
             TypeData.PSN_GENDER -> { gender = data }
             TypeData.PSN_DOB -> { dob = data }
-
+            TypeData.PSN_BLOOD -> { blood = data }
+            TypeData.PSN_NATION -> { nation = data }
+            TypeData.PSN_CAREER -> { career = data }
+            TypeData.PSN_STATUS -> { status = data }
+            TypeData.PSN_ADDRESS -> { address = data }
+            TypeData.PSN_EDU_LV -> { edu_lv = data }
+            TypeData.PSN_CONGENITAL_DIS -> { congenital_dis = data }
         }
-        //gender
-        //birthday
-        //des1,des2,des3
-        //relationship
-        //address
-        //other
-        //pic bitmap
-
-
 
     }
 }
