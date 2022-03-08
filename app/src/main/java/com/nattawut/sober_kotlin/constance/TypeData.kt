@@ -20,6 +20,8 @@ object TypeData {
     const val PSN_CAREER = "personal_career"
     const val PSN_EDU_LV = "personal_edu_level"
     const val PSN_CONGENITAL_DIS = "personal_congenital_dis"
+    const val PSN_NOTE = "personal_note"
+    const val PSN_PIC = "personal_pic"
 
     const val USERNAME = "username"
     const val MAIL = "mail"

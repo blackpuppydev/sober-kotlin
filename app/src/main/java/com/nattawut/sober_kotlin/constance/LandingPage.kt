@@ -12,6 +12,8 @@ object LandingPage {
     const val ADD_PROFILE3 = "add_profile3"
     const val ADD_PROFILE4 = "add_profile4"
     const val HAVE_PROFILE = "have_profile"
+    const val ADD_NOTE = "add_node"
+    const val ADD_PIC = "add_pic"
 
     const val SL_TYPE = "select_type"
 

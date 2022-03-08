@@ -1,19 +1,24 @@
 package com.nattawut.sober_kotlin.fragment.profile
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
+import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.activity.QuizActivity
 import com.nattawut.sober_kotlin.adapter.ItemOtherAdapter
 import com.nattawut.sober_kotlin.adapter.TypeTestAdapter
+import com.nattawut.sober_kotlin.constance.LandingPage
+import com.nattawut.sober_kotlin.constance.TypeData
+import com.nattawut.sober_kotlin.listener.FragmentEvent
 import com.nattawut.sober_kotlin.model.MenuOther
+import java.lang.ClassCastException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +37,19 @@ class AddProfileFragment3 : Fragment() {
 
     private lateinit var list:RecyclerView
     lateinit var item : ArrayList<MenuOther>
+    private lateinit var btn_confirm:RelativeLayout
+    private lateinit var alert_disease:TextView
+    private lateinit var diseaseAdd:EditText
+    lateinit var listener: FragmentEvent
+
+    var goToNext = true
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            listener = context as FragmentEvent
+        }catch (e: ClassCastException){}
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +67,9 @@ class AddProfileFragment3 : Fragment() {
         val  v =  inflater.inflate(R.layout.fragment_add_profile3, container, false)
 
         list = v.findViewById(R.id.list)
+        btn_confirm = v.findViewById(R.id.btn_confirm)
+        alert_disease = v.findViewById(R.id.alert_disease)
+        diseaseAdd = v.findViewById(R.id.diseaseAdd)
 
         item = ArrayList<MenuOther>()
         item.add(MenuOther(R.drawable.note,R.string.note.toString()))
@@ -64,20 +85,66 @@ class AddProfileFragment3 : Fragment() {
 
         val adapter = object : ItemOtherAdapter(item){
             override fun onSuccess(position: Int) {
-//                startActivity(
-//                    Intent(context!!, QuizActivity::class.java)
-//                    .putExtra("type", position.toString()))
 
-//                startActivity(Intent(applicationContext,QuestionActivity::class.java)
-//                    .putExtra("header","ชุดคำถามที่ ${position+1}"))
+                Toast.makeText(context!!,"position : $position",Toast.LENGTH_SHORT).show()
+
+                if(position == 0){
+                    val fragment = AddNoteFragment()
+                    activity?.supportFragmentManager?.beginTransaction()
+                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_NOTE)
+                        ?.addToBackStack(LandingPage.ADD_NOTE)
+                        ?.commit()
+                }else if(position == 1){
+                    val fragment = AddPhotoFragment()
+                    activity?.supportFragmentManager?.beginTransaction()
+                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_PIC)
+                        ?.addToBackStack(LandingPage.ADD_PIC)
+                        ?.commit()
+                }
             }
         }
         list.adapter = adapter
 
 
+        btn_confirm.setOnClickListener {
+
+            when(goToNext){
+                true -> {
+                    if(getDisease(v) == R.string.have.toString() && diseaseAdd.text.toString() != ""){
+                        listener.onResult(diseaseAdd.text.toString(),TypeData.PSN_CONGENITAL_DIS)
+                        listener.onSuccess(LandingPage.ADD_PROFILE4)
+                    }else if(getDisease(v) == R.string.have_not.toString()){
+                        listener.onSuccess(LandingPage.ADD_PROFILE4)
+                    }
+                }
+                false -> {
+                    return@setOnClickListener
+                }
+            }
+
+        }
+
 
 
         return v
+    }
+
+
+    private fun getDisease(v:View):String{
+
+        val selectDisease = v.findViewById<RadioGroup>(R.id.disease).checkedRadioButtonId
+
+        return if(selectDisease == -1){
+            alert_disease.visibility = View.VISIBLE
+            goToNext = false
+            "none"
+        }else{
+            alert_disease.visibility = View.GONE
+            goToNext = true
+            val selectChoiceDisease = v.findViewById<RadioButton>(selectDisease)
+            selectChoiceDisease.text.toString()
+        }
+
     }
 
     companion object {

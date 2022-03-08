@@ -130,6 +130,7 @@ class PasswordFragment : Fragment() {
                     if(newPass.text.toString() == conNewPass.text.toString()){ //update password
                         dbManager?.updatePassword(conNewPass.text.toString(),AppPreference.getInstance().getUsername().toString())
                         AppPreference.getInstance().setPassword(conNewPass.text.toString())
+                        Toast.makeText(context,R.string.complete,Toast.LENGTH_SHORT).show()
                     }else Toast.makeText(context,R.string.same_pass, Toast.LENGTH_SHORT).show()
                 }else Toast.makeText(context,R.string.old_invalid, Toast.LENGTH_SHORT).show()
             }else Toast.makeText(context,R.string.infor_com, Toast.LENGTH_SHORT).show()

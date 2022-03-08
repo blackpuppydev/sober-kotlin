@@ -129,13 +129,35 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:id="@+id/list"/>
+            android:layout_marginTop="13dp" />
 
 
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_button2">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/kanitregular"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
 
 
 
