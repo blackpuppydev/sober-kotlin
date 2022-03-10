@@ -8,7 +8,6 @@ object TypeData {
     const val DISEASE3 = "disease3"
     const val DISEASE4 = "disease4"
 
-
     const val PSN_NAME = "personal_name"
     const val PSN_LNAME = "personal_lname"
     const val PSN_DOB = "personal_dob"

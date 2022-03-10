@@ -108,6 +108,8 @@
     <string name="note">Note</string>
     <string name="pic">Picture</string>
     <string name="complete">Complete</string>
+    <string name="upload_pic">Upload picture</string>
+    <string name="save">Save</string>
 
     <string name="status">Status</string>
     <string name="single">Single</string>

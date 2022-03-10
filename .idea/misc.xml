@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable-anydpi/ic_menu.xml" value="0.32916666666666666" />
         <entry key="app/src/main/res/drawable/background_dialog.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/background_item.xml" value="0.34427083333333336" />
+        <entry key="app/src/main/res/drawable/background_item2.xml" value="0.3770833333333333" />
         <entry key="app/src/main/res/drawable/background_type_item.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/drawable/card_profile.xml" value="0.32916666666666666" />
         <entry key="app/src/main/res/drawable/circle_profile.xml" value="0.34427083333333336" />
@@ -79,6 +80,7 @@
         <entry key="app/src/main/res/layout/load_dialod.xml" value="0.3609375" />
         <entry key="app/src/main/res/layout/load_dialog.xml" value="0.33" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.3609375" />
+        <entry key="app/src/main/res/layout/recycle_detail.xml" value="0.3609375" />
         <entry key="app/src/main/res/layout/recycle_profile.xml" value="0.3609375" />
         <entry key="app/src/main/res/layout/recycle_type.xml" value="0.375" />
         <entry key="app/src/main/res/menu-v26/nav_menu.xml" value="0.3609375" />

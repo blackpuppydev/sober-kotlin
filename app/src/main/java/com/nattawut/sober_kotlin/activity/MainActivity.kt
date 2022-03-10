@@ -7,6 +7,7 @@ import android.content.res.Resources
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
@@ -23,6 +24,7 @@ import com.nattawut.sober_kotlin.manager.Language
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import android.view.animation.TranslateAnimation
+import com.nattawut.sober_kotlin.view.dialog.LoadingDialog
 import kotlinx.android.synthetic.main.nav_header.*
 
 
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     var locale:Locale? = null
     var dbManager:DBManager? = null
+    var loadingDialog: LoadingDialog? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         dbManager = DBManager(this)
+        loadingDialog = LoadingDialog(this)
 
         AppPreference.getInstance().setSharedPreference(applicationContext)
 
@@ -119,11 +123,29 @@ class MainActivity : AppCompatActivity() {
                     setLanguage("th")
                 }
             }
-            
-            startActivity(Intent(this,MainActivity::class.java)
-                .setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK))
-            overridePendingTransition(0, 0)
+
+            loadingDialog?.showDialog("Please wait")
+
+
+            val timer = object: CountDownTimer(1000, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+
+
+
+                }
+
+                override fun onFinish() {
+                    loadingDialog?.hideDialog()
+                    startActivity(Intent(applicationContext,MainActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK))
+                    overridePendingTransition(0, 0)
+                }
+
+
+            }
+            timer.start()
+
         }
 
     }

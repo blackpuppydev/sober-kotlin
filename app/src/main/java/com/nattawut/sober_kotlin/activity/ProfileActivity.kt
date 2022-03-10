@@ -1,8 +1,10 @@
 package com.nattawut.sober_kotlin.activity
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
@@ -24,6 +26,8 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
     var career = ""
     var edu_lv = ""
     var congenital_dis = ""
+    var note = ""
+    var pic:Bitmap? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +60,10 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
             LandingPage.HAVE_PROFILE -> { fragment = HaveProfileFragment() }
             LandingPage.ADD_PROFILE2 -> { fragment = AddProfileFragment2() }
             LandingPage.ADD_PROFILE3 -> { fragment = AddProfileFragment3() }
+            LandingPage.ADD_NOTE -> { fragment = AddNoteFragment.newInstance(note,"") }
+            LandingPage.ADD_PIC -> {
+                fragment = AddPhotoFragment()
+            }
             LandingPage.ADD_PROFILE4 -> { fragment = AddProfileFragment4() }
             LandingPage.BACK -> { super.onBackPressed() }
             LandingPage.HOME -> {
@@ -83,20 +91,22 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
         openPage(page)
     }
 
-    override fun onResult(data: String, type: String) {
+    override fun onResult(data: Any, type: String) {
 
         when(type){
-            TypeData.PSN_NAME -> { firstname = data }
-            TypeData.PSN_LNAME -> { lastname = data }
-            TypeData.PSN_GENDER -> { gender = data }
-            TypeData.PSN_DOB -> { dob = data }
-            TypeData.PSN_BLOOD -> { blood = data }
-            TypeData.PSN_NATION -> { nation = data }
-            TypeData.PSN_CAREER -> { career = data }
-            TypeData.PSN_STATUS -> { status = data }
-            TypeData.PSN_ADDRESS -> { address = data }
-            TypeData.PSN_EDU_LV -> { edu_lv = data }
-            TypeData.PSN_CONGENITAL_DIS -> { congenital_dis = data }
+            TypeData.PSN_NAME -> { firstname = data as String }
+            TypeData.PSN_LNAME -> { lastname = data as String }
+            TypeData.PSN_GENDER -> { gender = data as String }
+            TypeData.PSN_DOB -> { dob = data as String }
+            TypeData.PSN_BLOOD -> { blood = data as String }
+            TypeData.PSN_NATION -> { nation = data as String }
+            TypeData.PSN_CAREER -> { career = data as String }
+            TypeData.PSN_STATUS -> { status = data as String }
+            TypeData.PSN_ADDRESS -> { address = data as String }
+            TypeData.PSN_EDU_LV -> { edu_lv = data as String }
+            TypeData.PSN_NOTE -> { note = data as String }
+            TypeData.PSN_PIC -> { pic = data as Bitmap }
+            TypeData.PSN_CONGENITAL_DIS -> { congenital_dis = data as String }
         }
 
     }

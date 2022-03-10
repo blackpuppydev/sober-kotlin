@@ -72,8 +72,8 @@ class AddProfileFragment3 : Fragment() {
         diseaseAdd = v.findViewById(R.id.diseaseAdd)
 
         item = ArrayList<MenuOther>()
-        item.add(MenuOther(R.drawable.note,R.string.note.toString()))
-        item.add(MenuOther(R.drawable.camera,R.string.pic.toString()))
+        item.add(MenuOther(R.drawable.note,getString(R.string.note)))
+        item.add(MenuOther(R.drawable.camera,getString(R.string.pic)))
 
         var lm = GridLayoutManager(context!!,2)
         lm.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -86,20 +86,20 @@ class AddProfileFragment3 : Fragment() {
         val adapter = object : ItemOtherAdapter(item){
             override fun onSuccess(position: Int) {
 
-                Toast.makeText(context!!,"position : $position",Toast.LENGTH_SHORT).show()
-
                 if(position == 0){
-                    val fragment = AddNoteFragment()
-                    activity?.supportFragmentManager?.beginTransaction()
-                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_NOTE)
-                        ?.addToBackStack(LandingPage.ADD_NOTE)
-                        ?.commit()
+                    listener.onSuccess(LandingPage.ADD_NOTE)
+//                    val fragment = AddNoteFragment()
+//                    activity?.supportFragmentManager?.beginTransaction()
+//                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_NOTE)
+//                        ?.addToBackStack(LandingPage.ADD_NOTE)
+//                        ?.commit()
                 }else if(position == 1){
-                    val fragment = AddPhotoFragment()
-                    activity?.supportFragmentManager?.beginTransaction()
-                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_PIC)
-                        ?.addToBackStack(LandingPage.ADD_PIC)
-                        ?.commit()
+                    listener.onSuccess(LandingPage.ADD_PIC)
+//                    val fragment = AddPhotoFragment()
+//                    activity?.supportFragmentManager?.beginTransaction()
+//                        ?.replace(R.id.fragment_profile,fragment,LandingPage.ADD_PIC)
+//                        ?.addToBackStack(LandingPage.ADD_PIC)
+//                        ?.commit()
                 }
             }
         }
@@ -110,10 +110,12 @@ class AddProfileFragment3 : Fragment() {
 
             when(goToNext){
                 true -> {
-                    if(getDisease(v) == R.string.have.toString() && diseaseAdd.text.toString() != ""){
+                    if(getDisease(v) == getString(R.string.have) && diseaseAdd.text.toString() != ""){
                         listener.onResult(diseaseAdd.text.toString(),TypeData.PSN_CONGENITAL_DIS)
                         listener.onSuccess(LandingPage.ADD_PROFILE4)
-                    }else if(getDisease(v) == R.string.have_not.toString()){
+                    }else if(getDisease(v) == getString(R.string.have_not)){
+                        listener.onSuccess(LandingPage.ADD_PROFILE4)
+                    }else{
                         listener.onSuccess(LandingPage.ADD_PROFILE4)
                     }
                 }

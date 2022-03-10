@@ -166,13 +166,13 @@ class EditProfileFragment2 : Fragment() {
         return v
     }
 
-    fun openCamera() {
-        var camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+    private fun openCamera() {
+        val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(camera,CAMERA_REQUEST_CODE)
     }
 
     private fun openGallery(){
-        var gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(gallery,GALLERY_REQUEST_CODE)
     }
 
@@ -186,20 +186,18 @@ class EditProfileFragment2 : Fragment() {
         }else if(requestCode == GALLERY_REQUEST_CODE){
             var selectedImage: Uri = data?.data as Uri
             val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
-            if (selectedImage != null) {
-                val cursor: Cursor? = context?.contentResolver?.query(
-                    selectedImage,
-                    filePathColumn, null, null, null
-                )
-                if (cursor != null) {
-                    cursor.moveToFirst()
-                    val columnIndex: Int = cursor.getColumnIndex(filePathColumn[0])
-                    val picturePath: String = cursor.getString(columnIndex)
-                    pic.clearColorFilter()
-                    pic.setImageBitmap(BitmapFactory.decodeFile(picturePath))
-                    cursor.close()
-                    dialog.dismiss()
-                }
+            val cursor: Cursor? = context?.contentResolver?.query(
+                selectedImage,
+                filePathColumn, null, null, null
+            )
+            if (cursor != null) {
+                cursor.moveToFirst()
+                val columnIndex: Int = cursor.getColumnIndex(filePathColumn[0])
+                val picturePath: String = cursor.getString(columnIndex)
+                pic.clearColorFilter()
+                pic.setImageBitmap(BitmapFactory.decodeFile(picturePath))
+                cursor.close()
+                dialog.dismiss()
             }
         }
     }

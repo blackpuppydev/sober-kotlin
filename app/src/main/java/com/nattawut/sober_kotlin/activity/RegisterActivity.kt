@@ -103,15 +103,15 @@ class RegisterActivity : AppCompatActivity() , FragmentEvent{
         openPage(page)
     }
 
-    override fun onResult(data: String, type: String) {
+    override fun onResult(data: Any, type: String) {
         when (type){
-            TypeData.USERNAME -> {username = data}
-            TypeData.MAIL -> {mail = data}
-            TypeData.PASSWORD -> {password = data}
-            TypeData.FIRSTNAME -> {firstName = data}
-            TypeData.LASTNAME -> {lastName = data}
-            TypeData.COMPANY -> {company = data}
-            TypeData.VACATION -> {vacation = data}
+            TypeData.USERNAME -> {username = data as String }
+            TypeData.MAIL -> {mail = data as String }
+            TypeData.PASSWORD -> {password = data as String }
+            TypeData.FIRSTNAME -> {firstName = data as String }
+            TypeData.LASTNAME -> {lastName = data as String}
+            TypeData.COMPANY -> {company = data as String}
+            TypeData.VACATION -> {vacation = data as String }
         }
     }
 

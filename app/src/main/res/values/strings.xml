@@ -108,12 +108,13 @@
     <string name="note">โน๊ต</string>
     <string name="pic">ภาพถ่าย</string>
     <string name="complete">สำเร็็จ</string>
+    <string name="upload_pic">อัพโหลดรูปภาพ</string>
+    <string name="save">บันทึก</string>
 
     <string name="status">สถานะสมรส</string>
     <string name="single">โสด</string>
     <string name="married">สมรส</string>
     <string name="separated">หย่าร้าง</string>
-
 
     <string name="nation">สัญชาติ</string>
     <string name="thai">ไทย</string>
