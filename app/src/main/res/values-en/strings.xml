@@ -87,6 +87,7 @@
     <string name="edit_per">Edit personal information</string>
     <string name="edit">Edit</string>
     <string name="gender">Gender</string>
+    <string name="age">Age</string>
     <string name="dob">Date of birth</string>
     <string name="address">Address</string>
     <string name="edu_level">Education level</string>

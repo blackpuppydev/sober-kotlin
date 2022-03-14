@@ -64,7 +64,9 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
             LandingPage.ADD_PIC -> {
                 fragment = AddPhotoFragment()
             }
-            LandingPage.ADD_PROFILE4 -> { fragment = AddProfileFragment4() }
+            LandingPage.ADD_PROFILE4 -> {
+                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,dob,blood,
+                    status,nation,address,edu_lv,career,congenital_dis,note) }
             LandingPage.BACK -> { super.onBackPressed() }
             LandingPage.HOME -> {
                 finish()

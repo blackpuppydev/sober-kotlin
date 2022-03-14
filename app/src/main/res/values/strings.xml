@@ -87,6 +87,7 @@
     <string name="edit_per">แก้ไขข้อมูลส่วนตัว</string>
     <string name="edit">แก้ไข</string>
     <string name="gender">เพศ</string>
+    <string name="age">อายุ</string>
     <string name="dob">วัน/เดือน/ปีเกิด</string>
     <string name="address">ที่อยู่</string>
     <string name="edu_level">ระดับการศึกษา</string>
