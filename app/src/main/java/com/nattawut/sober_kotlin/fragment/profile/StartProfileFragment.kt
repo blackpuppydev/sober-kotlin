@@ -30,14 +30,14 @@ private const val LNAME = "lname"
 class StartProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
-    lateinit var ed_name: EditText
-    lateinit var alertText: TextView
-    lateinit var btn_confirm: RelativeLayout
+    private lateinit var ed_name: EditText
+    private lateinit var alertText: TextView
+    private lateinit var btn_confirm: RelativeLayout
 
-    lateinit var listener:FragmentEvent
+    private lateinit var listener:FragmentEvent
 
-    private var firstname:String? = ""
-    private var lastname:String? = ""
+    private var firstname:String? = getString(R.string.firstname)
+    private var lastname:String? = getString(R.string.lastname)
 
     private var dbManager: DBManager? = null
 
@@ -48,7 +48,6 @@ class StartProfileFragment : Fragment() {
             lastname = it.getString(LNAME)
         }
     }
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -72,18 +71,17 @@ class StartProfileFragment : Fragment() {
 
         dbManager = DBManager(context!!)
 
-
         btn_confirm.setOnClickListener{
 
             val text = ed_name.text.toString()
 
             if(text.isEmpty()|| text == "") {
                 alertText.text = R.string.test_taker.toString()
-            }else if(checkData(text)){
+            }else if(checkData()){
                 listener.onSuccess(LandingPage.HAVE_PROFILE)
             }else{
 //                startActivity(Intent(applicationContext, ProfileSecondActivity::class.java).putExtra("name",text))
-                //sub string
+                //split string
                 getSplitName(text)
                 listener.onResult(firstname!!,TypeData.PSN_NAME)
                 listener.onResult(lastname!!,TypeData.PSN_LNAME)
@@ -97,16 +95,21 @@ class StartProfileFragment : Fragment() {
     }
 
 
-    private fun checkData(text:String):Boolean{
-        //for test
-//        if(dbManager?.getTextAdmin(ed_name.text.toString(),TypeData.FIRSTNAME) == ed_name.text.toString()){
-//
+    private fun checkData():Boolean{ //getTextEmp
+//        if(dbManager?.getTextAdmin(firstname.toString(),TypeData.FIRSTNAME) == firstname &&
+//            dbManager?.getTextAdmin(lastname.toString(),TypeData.FIRSTNAME) == lastname){
+//            return true
 //        }
-
-        return text == "test"
+        return false
     }
+
     private fun getSplitName(name: String){ //List<String>
-        val text = name.split("")
+        val text = name.split(" ")
+        if (text.size == 1){
+           firstname = text[0]
+           return
+        }
+
         if(text.size > 2){
             firstname = "${text[0]} ${text[1]}"
             lastname = text[2]
@@ -121,7 +124,6 @@ class StartProfileFragment : Fragment() {
 
     companion object {
 
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(firstname: String, lastname: String) =
             StartProfileFragment().apply {
