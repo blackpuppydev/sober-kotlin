@@ -17,8 +17,11 @@ import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+
+private const val GENDER = "gender"
+private const val DOB = "dob"
+private const val BLOOD = "blood"
+private const val NATION = "nation"
 
 /**
  * A simple [Fragment] subclass.
@@ -27,12 +30,13 @@ private const val ARG_PARAM2 = "param2"
  */
 class AddProfileFragment : Fragment() {
 
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    private var gender:String? = null
-    private var birthDay:String? = null
+    private var gender:String? = ""
+    private var birthDay:String? = ""
+    private var blood:String? = ""
+    private var national:String? = ""
+
+
     lateinit var listener:FragmentEvent
 
     private lateinit var sl_male:RelativeLayout
@@ -52,7 +56,6 @@ class AddProfileFragment : Fragment() {
     var dis3 = "ไม่มี"
     var dis4 = "ไม่มี"
 
-    var nation_text = ""
 
     //values choice
     //Calendar
@@ -66,8 +69,10 @@ class AddProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            gender = it.getString(GENDER)
+            birthDay = it.getString(DOB)
+            blood = it.getString(BLOOD)
+            national = it.getString(NATION)
         }
     }
 
@@ -113,10 +118,16 @@ class AddProfileFragment : Fragment() {
                 true -> {
                     listener.onResult(gender.toString(), TypeData.PSN_GENDER)
                     listener.onResult(showBirthday.text.toString(),TypeData.PSN_DOB)
-                    listener.onResult(getTypeBlood(v),TypeData.PSN_BLOOD)
-                    listener.onResult(nation_text,TypeData.PSN_NATION)
 
-                    Toast.makeText(context!!,"${gender.toString()} ${showBirthday.text} $nation_text",Toast.LENGTH_SHORT).show()
+                    //dob
+                    listener.onResult(daySelect,TypeData.DATE)
+                    listener.onResult(monthSelect,TypeData.MONTH)
+                    listener.onResult(yearSelect,TypeData.YEAR)
+
+                    listener.onResult(getTypeBlood(v),TypeData.PSN_BLOOD)
+                    listener.onResult(national.toString(),TypeData.PSN_NATION)
+
+                    Toast.makeText(context!!,"${gender.toString()} ${showBirthday.text} $national",Toast.LENGTH_SHORT).show()
 
                     listener.onSuccess(LandingPage.ADD_PROFILE2)
                 }
@@ -159,15 +170,13 @@ class AddProfileFragment : Fragment() {
                 yearSelect = year
 
                 showBirthday.text = "$daySelect/$monthSelect/$yearSelect"
+                birthDay = "$daySelect/$monthSelect/$yearSelect"
 
 
             },yearSelect,monthSelect-1,daySelect)
 
             datePicker.show()
         }
-
-
-
 
         return v
 
@@ -184,7 +193,7 @@ class AddProfileFragment : Fragment() {
         nation.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                 nation_text = nationArray[position].toString()
+                national = nationArray[position].toString()
             }
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
@@ -194,6 +203,8 @@ class AddProfileFragment : Fragment() {
 
         val selectBlood = v.findViewById<RadioGroup>(R.id.blood).checkedRadioButtonId
 
+
+
         return if(selectBlood == -1){
             alert_blood.visibility = View.VISIBLE
             goToNext = false
@@ -202,6 +213,7 @@ class AddProfileFragment : Fragment() {
             alert_blood.visibility = View.GONE
             goToNext = true
             val selectChoiceBlood = v.findViewById<RadioButton>(selectBlood)
+//            Toast.makeText(context,"select : ${selectBlood.}",Toast.LENGTH_SHORT).show()
             selectChoiceBlood.text.toString()
 
         }
@@ -221,11 +233,13 @@ class AddProfileFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(gender: String, dob: String, blood:String, national:String) =
             AddProfileFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(GENDER, gender)
+                    putString(DOB, dob)
+                    putString(BLOOD, blood)
+                    putString(NATION, national)
                 }
             }
     }

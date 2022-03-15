@@ -30,4 +30,9 @@ object TypeData {
     const val COMPANY = "company"
     const val VACATION = "vacation"
 
+    //analysis date of birth
+    const val DATE = "date"
+    const val MONTH = "month"
+    const val YEAR = "year"
+
 }

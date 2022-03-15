@@ -7,6 +7,7 @@ object LandingPage {
     const val REGISTER2 = "register2"
 
     //profile
+    const val START_PROFILE = "start_profile"
     const val ADD_PROFILE = "add_profile"
     const val ADD_PROFILE2 = "add_profile2"
     const val ADD_PROFILE3 = "add_profile3"

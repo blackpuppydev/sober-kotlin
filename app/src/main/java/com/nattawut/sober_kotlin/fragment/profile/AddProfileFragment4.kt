@@ -57,6 +57,7 @@ class AddProfileFragment4 : Fragment() {
     private lateinit var detailGenderAge:TextView
     private lateinit var detailBlood:TextView
     private lateinit var btn_confirm:RelativeLayout
+    private lateinit var btn_edit:RelativeLayout
     lateinit var item : ArrayList<MenuDetail>
 
 
@@ -98,6 +99,7 @@ class AddProfileFragment4 : Fragment() {
         detailGenderAge = v.findViewById(R.id.detailGenderAge)
         detailBlood = v.findViewById(R.id.detailBlood)
         btn_confirm = v.findViewById(R.id.btn_confirm)
+        btn_edit = v.findViewById(R.id.btn_edit)
 
         detailName.text = name
         detailGenderAge.text = "${getString(R.string.gender)} ${gender.toString()}  ${getString(R.string.age)} $age"
@@ -124,6 +126,10 @@ class AddProfileFragment4 : Fragment() {
         btn_confirm.setOnClickListener {
             //save in db
             listener.onSuccess(LandingPage.SL_TYPE)
+        }
+
+        btn_edit.setOnClickListener {
+            listener.onSuccess(LandingPage.START_PROFILE)
         }
 
         return v

@@ -2,15 +2,19 @@ package com.nattawut.sober_kotlin.activity
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.nattawut.sober_kotlin.R
 import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
 import com.nattawut.sober_kotlin.listener.FragmentEvent
+import java.time.LocalDate
+import java.time.Period
 
 class ProfileActivity : BaseActivity() , FragmentEvent {
 
@@ -28,6 +32,14 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
     var congenital_dis = ""
     var note = ""
     var pic:Bitmap? = null
+
+
+    //age
+    var age = 0
+    var date = 0
+    var month = 0
+    var year = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +68,12 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
         var fragment: Fragment? = null
 
         when (page) {
-            LandingPage.ADD_PROFILE -> { fragment = AddProfileFragment() }
+            LandingPage.START_PROFILE -> {
+                fragment = StartProfileFragment.newInstance(firstname,lastname)
+            }
+            LandingPage.ADD_PROFILE -> {
+                fragment = AddProfileFragment()
+            }
             LandingPage.HAVE_PROFILE -> { fragment = HaveProfileFragment() }
             LandingPage.ADD_PROFILE2 -> { fragment = AddProfileFragment2() }
             LandingPage.ADD_PROFILE3 -> { fragment = AddProfileFragment3() }
@@ -65,7 +82,7 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 fragment = AddPhotoFragment()
             }
             LandingPage.ADD_PROFILE4 -> {
-                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,dob,blood,
+                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,getAge(year,month,date).toString(),blood,
                     status,nation,address,edu_lv,career,congenital_dis,note) }
             LandingPage.BACK -> { super.onBackPressed() }
             LandingPage.HOME -> {
@@ -109,7 +126,22 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
             TypeData.PSN_NOTE -> { note = data as String }
             TypeData.PSN_PIC -> { pic = data as Bitmap }
             TypeData.PSN_CONGENITAL_DIS -> { congenital_dis = data as String }
+            TypeData.DATE -> { date = data as Int }
+            TypeData.MONTH -> { month = data as Int }
+            TypeData.YEAR -> { year = data as Int }
         }
 
+    }
+
+
+    fun getAge(year: Int, month: Int, dayOfMonth: Int): Int {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Period.between(
+                LocalDate.of(year, month, dayOfMonth),
+                LocalDate.now()
+            ).years
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
     }
 }
