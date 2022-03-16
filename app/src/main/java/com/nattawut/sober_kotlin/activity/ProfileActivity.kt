@@ -1,5 +1,6 @@
 package com.nattawut.sober_kotlin.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
@@ -13,8 +14,11 @@ import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
 import com.nattawut.sober_kotlin.listener.FragmentEvent
+import java.text.ParseException
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.Period
+import java.util.*
 
 class ProfileActivity : BaseActivity() , FragmentEvent {
 
@@ -68,9 +72,7 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
         var fragment: Fragment? = null
 
         when (page) {
-            LandingPage.START_PROFILE -> {
-                fragment = StartProfileFragment.newInstance(firstname,lastname)
-            }
+            LandingPage.START_PROFILE -> { fragment = StartProfileFragment.newInstance(firstname,lastname) }
             LandingPage.ADD_PROFILE -> {
                 fragment = AddProfileFragment()
             }
@@ -82,8 +84,8 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 fragment = AddPhotoFragment()
             }
             LandingPage.ADD_PROFILE4 -> {
-                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,getAge(year,month,date).toString(),blood,
-                    status,nation,address,edu_lv,career,congenital_dis,note) }
+                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,getAge2(dob).toString(),
+                    blood,status,nation,address,edu_lv,career,congenital_dis,note) }
             LandingPage.BACK -> { super.onBackPressed() }
             LandingPage.HOME -> {
                 finish()
@@ -92,7 +94,9 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 startActivity(intent)
             }
             LandingPage.SL_TYPE -> {
-                startActivity(Intent(this,SelectTypeActivity::class.java))
+                val intent = Intent(this, SelectTypeActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                startActivity(intent)
             }
         }
 
@@ -134,7 +138,7 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
     }
 
 
-    fun getAge(year: Int, month: Int, dayOfMonth: Int): Int {
+    private fun getAge(year: Int, month: Int, dayOfMonth: Int): Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Period.between(
                 LocalDate.of(year, month, dayOfMonth),
@@ -144,4 +148,40 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
             TODO("VERSION.SDK_INT < O")
         }
     }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun getAge2(dobString: String): Int {
+
+        var date: Date? = null
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+
+        try {
+            date = sdf.parse(dobString)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+
+        if (date == null) return 0
+
+        val dob: Calendar = Calendar.getInstance()
+        val today: Calendar = Calendar.getInstance()
+
+        dob.time = date
+
+        val year: Int = dob.get(Calendar.YEAR)
+        val month: Int = dob.get(Calendar.MONTH)
+        val day: Int = dob.get(Calendar.DAY_OF_MONTH)
+
+        dob.set(year, month + 1, day)
+
+        var age: Int = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
+
+        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+            age--
+        }
+
+        return age
+    }
+
+
 }

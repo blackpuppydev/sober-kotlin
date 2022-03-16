@@ -80,7 +80,6 @@ class StartProfileFragment : Fragment() {
             }else if(checkData()){
                 listener.onSuccess(LandingPage.HAVE_PROFILE)
             }else{
-//                startActivity(Intent(applicationContext, ProfileSecondActivity::class.java).putExtra("name",text))
                 //split string
                 getSplitName(text)
                 listener.onResult(firstname!!,TypeData.PSN_NAME)
