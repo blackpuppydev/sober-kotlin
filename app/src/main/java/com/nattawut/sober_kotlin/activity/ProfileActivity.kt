@@ -14,6 +14,9 @@ import com.nattawut.sober_kotlin.constance.LandingPage
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.fragment.profile.*
 import com.nattawut.sober_kotlin.listener.FragmentEvent
+import com.nattawut.sober_kotlin.manager.ConvertData
+import com.nattawut.sober_kotlin.manager.DBManager
+import com.nattawut.sober_kotlin.manager.Personal
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -44,12 +47,16 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
     var month = 0
     var year = 0
 
+    var dbManager: DBManager? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         initView()
+
+        dbManager = DBManager(applicationContext!!)
 
     }
 
@@ -84,7 +91,7 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 fragment = AddPhotoFragment()
             }
             LandingPage.ADD_PROFILE4 -> {
-                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,getAge2(dob).toString(),
+                fragment = AddProfileFragment4.newInstance("$firstname $lastname",gender,ConvertData.getInstance().getAge2(dob).toString(),
                     blood,status,nation,address,edu_lv,career,congenital_dis,note) }
             LandingPage.BACK -> { super.onBackPressed() }
             LandingPage.HOME -> {
@@ -93,7 +100,9 @@ class ProfileActivity : BaseActivity() , FragmentEvent {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
-            LandingPage.SL_TYPE -> {
+            LandingPage.SL_TYPE -> { //comment show dialog before save and cannot return to edited
+                //save db
+                dbManager?.insertPersonal(Personal(firstname,lastname,dob,status,address,gender,blood,nation,career,edu_lv,congenital_dis,note,pic!!))
                 val intent = Intent(this, SelectTypeActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 startActivity(intent)

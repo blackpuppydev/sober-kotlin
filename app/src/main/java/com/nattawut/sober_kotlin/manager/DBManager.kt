@@ -38,6 +38,8 @@ import com.nattawut.sober_kotlin.constance.DBConst.TABLE_NAME_PERSONAL
 import com.nattawut.sober_kotlin.constance.TypeData
 import com.nattawut.sober_kotlin.constance.TypeData.PSN_BLOOD
 import com.nattawut.sober_kotlin.constance.TypeData.PSN_NATION
+import com.nattawut.sober_kotlin.constance.TypeData.PSN_NOTE
+import com.nattawut.sober_kotlin.constance.TypeData.PSN_PIC
 
 
 class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
@@ -51,8 +53,7 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
 
         db?.execSQL("CREATE TABLE $TABLE_NAME_PERSONAL ( $PSN_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 " $PSN_NAME TEXT , $PSN_LNAME TEXT , $PSN_DOB TEXT, $PSN_NATION TEXT, $PSN_BLOOD TEXT, $PSN_STATUS TEXT," +
-                " $PSN_ADDRESS TEXT, $PSN_GENDER TEXT, $PSN_CAREER TEXT, $PSN_EDU_LV TEXT, $PSN_CONGENITAL_DIS TEXT)")
-
+                " $PSN_ADDRESS TEXT, $PSN_GENDER TEXT, $PSN_CAREER TEXT, $PSN_EDU_LV TEXT, $PSN_CONGENITAL_DIS TEXT, $PSN_NOTE TEXT, $PSN_PIC BLOB)")
 
 //        db?.execSQL("CREATE TABLE $TABLE_NAME_SCORE ( $EMP_ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
 //                " $EMP_NAME TEXT , $EMP_LNAME TEXT , $EMP_VAC TEXT)")
@@ -219,6 +220,34 @@ class DBManager(var context: Context):SQLiteOpenHelper(context,DATABASE_NAME,nul
         return (1..length)
             .map { allowedChars.random() }
             .joinToString("")
+    }
+
+
+
+    fun insertPersonal(personal:Personal){
+
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        personal.pic.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream)
+
+        val imgInByte = byteArrayOutputStream.toByteArray()
+
+        val dbPersonal = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(PSN_NAME,personal.name)
+        cv.put(PSN_LNAME,personal.lname)
+        cv.put(PSN_DOB,personal.dob)
+        cv.put(PSN_STATUS,personal.status)
+        cv.put(PSN_ADDRESS,personal.address)
+        cv.put(PSN_GENDER,personal.gender)
+        cv.put(PSN_BLOOD,personal.blood)
+        cv.put(PSN_NATION,personal.nation)
+        cv.put(PSN_CAREER,personal.career)
+        cv.put(PSN_EDU_LV,personal.edu_lv)
+        cv.put(PSN_CONGENITAL_DIS,personal.disease)
+        cv.put(PSN_NOTE,personal.note)
+        cv.put(PSN_PIC,imgInByte)
+        dbPersonal?.insert(TABLE_NAME_PERSONAL,null,cv)
+
     }
 
 
